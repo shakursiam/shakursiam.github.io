@@ -1,0 +1,171 @@
+cv:
+  name: Md Abdus Shakur Siam
+  label: Electronics & Embedded Systems Engineer / Research Assistant
+  email: shakursiam@gmail.com
+  location: Dhaka, Bangladesh
+  image: ""
+  summary: Research Assistant at the HIVE Research Group, Dept. of EEE, BUET, working on embedded AI for battery prognostics (SoH/RUL), TinyML, and IoT systems, alongside part-time industry work in PCB and embedded hardware design. Targeting fully-funded PhD positions (ECE/CS) for Spring/Fall 2027.
+
+  social_networks:
+    - network: GitHub
+      username: shakursiam
+    - network: LinkedIn
+      username: shakursiam
+
+  sections:
+    Education:
+      - institution: Ahsanullah University of Science and Technology (AUST)
+        location: Dhaka, Bangladesh
+        area: Electrical and Electronics Engineering
+        studyType: B.Sc.
+        start_date: 2019-06-01
+        end_date: 2023-11-01
+        score: "CGPA 3.28/4.00"
+        courses: "VLSI Design, Computer Architecture, Control Systems, Multimedia Communication, Processing and Fabrication Technology"
+        highlights:
+          - "Thesis: Analysis of the flight control system for designing a subsonic sounding rocket for meteorological particle observation."
+
+      - institution: Ananda Mohan College
+        location: Mymensingh, Bangladesh
+        area: Science
+        studyType: Higher Secondary Certificate (HSC)
+        start_date: 2016-07-01
+        end_date: 2018-01-01
+
+      - institution: Cantonment Board High School, Momenshahi
+        location: Mymensingh, Bangladesh
+        area: Science
+        studyType: Secondary School Certificate (SSC)
+        end_date: 2016-03-01
+
+    Research Experience:
+      - company: HIVE (Hydrogen, Intelligent Vehicle & Energy) Research Group, Dept. of EEE, BUET
+        position: Research Assistant (Embedded Systems & AIoT)
+        location: Dhaka, Bangladesh
+        start_date: 2024-08-01
+        end_date: present
+        summary: "Supervisor: Dr. Muhammad Anisuzzaman Talukder"
+        highlights:
+          - 'Designed and fabricated the "Edge-SBC" custom hardware platform integrating a BQ24610 buck charger with an ESP32-S3 host for real-time voltage, current, and thermal telemetry.'
+          - "Deployed a Float32-downcasted ML model for battery SoH/RUL estimation, achieving 52 µs steady-state latency, ≤21 µJ energy cost, and 1.80% MAE in live Physical-in-the-Loop (PhIL) validation."
+          - "Conducted a 32-experiment cross-dataset generalization protocol across 4 public benchmarks and 3 battery chemistries (NCA, LFP, LCO), establishing a protocol-affinity transfer ceiling of R² = 0.761."
+          - "Led a co-authored survey synthesizing 168 AI-IoT security studies into a 4D taxonomy, identifying critical gaps in cross-domain generalization and formal privacy guarantees."
+          - "Cooling Paint vs. Conventional Paint Performance Evaluation (industry-funded: Berger Paints Bangladesh Ltd.) — developed an ESP32/DHT22 IoT sensing network across 3 pilot enclosures; demonstrated a peak midday internal temperature reduction of 4.15 °C (10.74%); led data analytics, CIELAB colorimetric degradation modeling, and manuscript drafting."
+
+      - company: Infrastructure Investment Facilitation Company (IIFC)
+        position: Research Associate (Consultancy)
+        location: Dhaka, Bangladesh
+        start_date: 2026-04-01
+        end_date: present
+        highlights:
+          - Contributing to a national scientific inventory assessment report for the Ministry of Finance.
+
+    Industry Experience:
+      - company: Labtronics Design Limited
+        position: Electrical Hardware Engineer (UK-based, Remote, Part-time)
+        start_date: 2025-05-01
+        end_date: 2026-05-01
+        highlights:
+          - Develop electronic circuit boards from concept to production, ensuring full compliance with functional and mechanical design requirements.
+          - Create schematic designs and multi-layer PCB layouts in DipTrace, meeting DFM and DFT standards for manufacturability and testability.
+          - Optimize circuits through simulation and component selection, improving power efficiency, reliability, and overall system cost.
+          - Collaborate with PCB manufacturers and assembly vendors to oversee fabrication, assembly, and prototype validation.
+          - Maintain complete design documentation (schematics, PCB files, BOMs, test reports) under Git-based version control, ensuring traceability and design integrity.
+
+      - company: Eravend GmbH & Co. KG
+        position: Embedded Engineer (Germany-based, Remote, Part-time)
+        start_date: 2024-10-01
+        end_date: 2025-04-01
+        highlights:
+          - Developed multi-layer PCB layouts for a Choco 3D printer onboard computer using KiCad, ensuring signal integrity, power optimization, and manufacturability.
+          - Integrated hardware and firmware subsystems in collaboration with software teams to achieve full system functionality and reliability.
+          - Contributed to VTOL drone circuit design, focusing on power distribution and control integration.
+
+      - company: Frontech Limited
+        position: Executive, Research Development and Production Engineer (Full-time)
+        start_date: 2023-10-01
+        end_date: 2024-07-01
+        highlights:
+          - Led full-cycle development of the JRC AgriTech Board, including 4-layer PCB design and sensor integration.
+          - "JRC Home Automation System: developed custom control libraries and implemented a WebSocket-based interface for real-time device communication using HTML, CSS, and JavaScript."
+
+    Teaching & Academic Service:
+      - company: NAS Tech Engineering
+        position: Technical Trainer – PCB Design Fundamentals (DipTrace)
+        start_date: 2025-09-01
+        end_date: 2025-09-01
+        highlights:
+          - Conducted a three-month-long industrial training on PCB design workflow covering schematic capture, BOM preparation, and DFM techniques using DipTrace.
+
+      - company: AUST
+        position: Workshop Instructor – Hands-on PCB Design for Embedded Applications
+        start_date: 2025-02-01
+        end_date: 2025-02-01
+        highlights:
+          - Delivered a practical PCB design workshop using KiCad, focusing on design flow, component analysis, and prototype-ready layout preparation.
+
+    Leadership & Service:
+      - company: AUST Innovation and Design Club (IDC)
+        position: Vice President
+        start_date: 2020-08-01
+        end_date: 2023-10-01
+        summary: "See the full story, with photos, on the <a href='/projects/#leadership'>Projects</a> page."
+        highlights:
+          - "Advanced from Web Developer/Sub-Executive Member to Vice President; managed 90+ volunteers and directed major technical initiatives, VLSI career seminars, and the flagship festival MindSparks'23."
+          - "Organizing Head of MindSparks'23 — managed 1,200+ participants and raised BDT 1.2M in funding through strategic marketing, corporate outreach, and event planning."
+
+      - company: AUST Nanosatellite Program (AUSTSAT), Satellite Communication Laboratory, Dept. of EEE, AUST
+        position: Co-Initiator / Contributor
+        summary: "See the full story, with photos, on the <a href='/projects/#leadership'>Projects</a> page."
+        highlights:
+          - Co-initiated the establishment of the Satellite Research Lab at AUST and contributed to the nanosatellite and ground-station development effort.
+
+      - company: TechnoXian Bangladesh
+        position: Chief Coordinator
+        start_date: 2023-01-01
+        end_date: 2024-01-01
+        highlights:
+          - Directed a 50+ member organizing team.
+
+      - company: IEEE AUST Student Branch
+        position: Webmaster
+        start_date: 2021-01-01
+        end_date: 2021-06-01
+
+      - company: ULKASEMI Pvt. Limited
+        position: 7-Day Industrial Training — IC Mask Design, Digital Design & Verification
+
+      - company: Bangabandhu Sheikh Mujibur Rahman Aviation and Aerospace University (BSMRAAU)
+        position: Participant, Rocketry Innovation Challenge 2022
+
+      - company: HULT Prize at AUST
+        position: Digital Content Coordinator (Volunteer)
+        start_date: 2020-01-01
+        end_date: 2022-01-01
+
+    Awards:
+      - title: AUSTSAT Appreciation Crest, Undergraduate Student Farewell
+        date: 2023-01-01
+        awarder: Dept. of EEE, Ahsanullah University of Science and Technology
+        summary: In recognition of contributions to developing the AUST nanosatellite and ground station.
+
+      - title: MindSparks'23 Pledge of Appreciation
+        date: 2023-01-01
+        awarder: AUST Innovation and Design Club
+        summary: For unwavering support and guidance as Vice President in leading MindSparks'23 to success.
+
+    Skills:
+      - name: Programming
+        keywords: "C/C++, Python, MATLAB"
+      - name: ML / Embedded AI
+        keywords: "TensorFlow, TensorFlow Lite Micro, scikit-learn (SoH/RUL modeling, edge deployment)"
+      - name: Embedded Platforms
+        keywords: "STM32, ESP32/ESP-IDF, Arduino, Raspberry Pi"
+      - name: PCB & Circuit Design
+        keywords: "KiCad, DipTrace, LTspice, OrCAD PSPICE, Proteus"
+      - name: Communication Protocols
+        keywords: "SPI, I²C, UART, CAN, MQTT, NFC, RFID"
+      - name: IoT & Cloud
+        keywords: "AWS IoT Core, Node-RED, LoRaWAN, Wi-Fi, Bluetooth"
+      - name: Version Control
+        keywords: "Git"
