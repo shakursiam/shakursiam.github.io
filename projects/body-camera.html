@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Camera Prototype: STM32H7 Embedded Imaging System | Md. Abdus Shakur Siam</title>
+  
+  <meta name="author" content="Md. Abdus Shakur Siam">
+  <meta name="description" content="Body Camera Prototype: High-speed embedded vision platform featuring STM32H7 ARM Cortex-M7 @ 480MHz, ON Semi global-shutter CMOS sensor, and DCMI pipeline.">
+  <meta name="keywords" content="STM32H7, Global Shutter CMOS, Embedded Vision, DCMI, SDRAM, FreeRTOS, Tactical Camera, KiCad">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function() {
+      var saved = localStorage.getItem('shakursiam_theme_preference');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="navbar-brand" title="Homepage">
+        <span class="initials">SIAM</span>
+        <span>Md. Abdus Shakur Siam</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">About</a></li>
+          <li><a href="../research.html" class="nav-link">Research</a></li>
+          <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="../cv.html" class="nav-link">CV</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <svg class="icon-sun" style="display:none;" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"></line>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"></line>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      
+      <nav class="breadcrumb-nav">
+        <a href="../projects.html">&larr; Back to Projects Hub</a> / <span>Body Camera Prototype</span>
+      </nav>
+
+      <header class="case-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <span class="status-badge prototype">Completed Prototype</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">Independent Embedded R&amp;D</span>
+        </div>
+        <h1 style="margin-bottom: 0.5rem;">Body Camera Prototype: STM32H7 Embedded Imaging System</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          High-Speed Global-Shutter CMOS Vision System with Hardware JPEG Acceleration and SDRAM Double-Buffering.
+        </p>
+
+        <div class="tech-pills-row">
+          <span class="tech-pill">STM32H743VIT6 (Cortex-M7 @ 480 MHz)</span>
+          <span class="tech-pill">ON Semi NOIP1SN1300A</span>
+          <span class="tech-pill">DCMI Parallel</span>
+          <span class="tech-pill">SDRAM</span>
+          <span class="tech-pill">Hardware JPEG</span>
+          <span class="tech-pill">SDMMC</span>
+          <span class="tech-pill">FreeRTOS</span>
+          <span class="tech-pill">KiCad</span>
+        </div>
+
+        <div class="case-meta-grid">
+          <div class="case-meta-item">
+            <span class="label">Role</span>
+            <div class="val">Embedded Systems &amp; Hardware Engineer</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Processor</span>
+            <div class="val">ARM Cortex-M7 @ 480 MHz (1027 DMIPS)</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Sensor Type</span>
+            <div class="val">Global-Shutter CMOS (Zero Rolling Jello)</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Memory Architecture</span>
+            <div class="val">External SDRAM + Hardware DMA2D</div>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <h2>System Architecture &amp; Hardware Specifications</h2>
+        <p>
+          Standard commercial rolling-shutter cameras suffer heavy spatial distortion ("jello effect") when subjected to rapid physical movement on body-worn personnel or robotic platforms. This system was engineered around an ON Semiconductor global-shutter CMOS matrix, capturing each frame simultaneously across all pixels without motion blur or line-scan distortion.
+        </p>
+
+        <div class="specs-table-wrapper">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Subsystem</th>
+                <th>Engineering Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Core Compute Platform</td>
+                <td>STMicroelectronics <code>STM32H743VIT6</code> high-performance ARM Cortex-M7 core running at 480 MHz with hardware Double-Precision Floating Point Unit (DP-FPU), L1 cache (16 KB I + 16 KB D), and 1 MB embedded RAM.</td>
+              </tr>
+              <tr>
+                <td>Global-Shutter Imaging Sensor</td>
+                <td>ON Semiconductor <code>NOIP1SN1300A</code> (PYTHON 1300) monochrome/color CMOS sensor capable of 1.3 MP (1280&times;1024), 0.5 MP, and 0.3 MP captures with snapshot shutter exposure.</td>
+              </tr>
+              <tr>
+                <td>High-Speed Video Interface</td>
+                <td>8-bit parallel STM32 Digital Camera Memory Interface (<code>DCMI</code>) receiving pixel clock, horizontal synchronization (HSYNC), and vertical synchronization (VSYNC) directly from the sensor board.</td>
+              </tr>
+              <tr>
+                <td>Double-Buffered Memory Pipeline</td>
+                <td>Sensor frame streams are routed via Direct Memory Access (DMA) into external high-speed <code>SDRAM</code>, processed through the STM32 hardware JPEG encoding engine, and streamed at sustained high data rates to micro-SD media over a 4-bit <code>SDMMC</code> interface.</td>
+              </tr>
+              <tr>
+                <td>Multi-Rail PMIC Power Tree</td>
+                <td>Ultra-low-noise linear power tree generating isolated 1.8V (digital I/O), 2.8V (clean analog sensor core), and 3.3V (MCU, SDRAM, storage) rails from an integrated Li-Po rechargeable battery.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Hardware Prototyping Gallery</h2>
+        <div class="gallery-grid">
+          
+          <figure class="figure-card">
+            <div class="figure-img-wrapper">
+              <img src="../assets/img/projects/bodycam-board.jpg" alt="Populated STM32H7 PCB and camera module connected via flexible ribbon cable" class="figure-img">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 1:</strong> Populated STM32H743 development board on an electronics workbench, interfacing with the global-shutter optical camera module via high-speed flex ribbon cable.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <section style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <a href="../projects.html" class="btn-action">&larr; Back to All Projects</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Md. Abdus Shakur Siam
+      </div>
+      <div class="footer-socials">
+        <a href="https://orcid.org/0000-0003-4628-1832" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="ORCID">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.434h2.238c2.644 0 3.787-1.744 3.787-3.712 0-2.156-1.372-3.722-3.722-3.722h-2.303z"/></svg>
+        </a>
+        <a href="https://github.com/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:shakursiam@gmail.com" class="footer-social-link" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

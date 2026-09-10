@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cool Paint IoT: Passive Radiative Cooling Monitoring | Md. Abdus Shakur Siam</title>
+  
+  <meta name="author" content="Md. Abdus Shakur Siam">
+  <meta name="description" content="Multi-Seasonal Cool Paint IoT Monitoring Network: 7-month distributed microclimate and envelope temperature monitoring platform on the BUET ECE rooftop.">
+  <meta name="keywords" content="Cool Paint IoT, Passive Radiative Cooling, Microclimate Sensing, ESP32, DHT22, BUET, Berger Paints, Energy Savings">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function() {
+      var saved = localStorage.getItem('shakursiam_theme_preference');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="navbar-brand" title="Homepage">
+        <span class="initials">SIAM</span>
+        <span>Md. Abdus Shakur Siam</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">About</a></li>
+          <li><a href="../research.html" class="nav-link">Research</a></li>
+          <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="../cv.html" class="nav-link">CV</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <svg class="icon-sun" style="display:none;" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"></line>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"></line>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      
+      <nav class="breadcrumb-nav">
+        <a href="../projects.html">&larr; Back to Projects Hub</a> / <span>Cool Paint IoT</span>
+      </nav>
+
+      <header class="case-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <span class="status-badge research">Research Field Validation (7 Months)</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">RISE-BUET &bull; Sponsored by Berger Paints</span>
+        </div>
+        <h1 style="margin-bottom: 0.5rem;">Multi-Seasonal Cool Paint IoT Monitoring Network</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          Distributed Microclimate &amp; Building Envelope IoT Sensing Architecture Deployed on the BUET ECE Rooftop.
+        </p>
+
+        <div class="tech-pills-row">
+          <span class="tech-pill">ESP32</span>
+          <span class="tech-pill">DHT22 Temp/Humidity</span>
+          <span class="tech-pill">DS18B20 Surface Probe</span>
+          <span class="tech-pill">BH1750 Lux</span>
+          <span class="tech-pill">MPL3115A2 Barometric</span>
+          <span class="tech-pill">MQTT / HTTP REST</span>
+          <span class="tech-pill">ThingSpeak</span>
+          <span class="tech-pill">MATLAB</span>
+        </div>
+
+        <div class="case-meta-grid">
+          <div class="case-meta-item">
+            <span class="label">Role</span>
+            <div class="val">Embedded Systems Designer &amp; First Author</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Sponsor &amp; Lab</span>
+            <div class="val">Berger Paints &bull; RISE-BUET</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Duration</span>
+            <div class="val">7 Continuous Months (Nov 2024 &ndash; May 2025)</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Cooling Impact</span>
+            <div class="val">4.15 &deg;C Peak Interior Suppression (10.74%)</div>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <h2>System Architecture &amp; Hardware Specifications</h2>
+        <p>
+          Passive sub-ambient radiative cooling coatings must be evaluated under long-term tropical outdoor conditions encompassing extreme ultraviolet irradiance, high humidity, and heavy monsoon rains. This project engineered an autonomous, multi-node IoT telemetry network continuously monitoring ambient weather and internal thermal dynamics across three identical pilot testbed structures on the BUET ECE department rooftop.
+        </p>
+
+        <div class="specs-table-wrapper">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Subsystem</th>
+                <th>Engineering Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Physical Testbed Units</td>
+                <td>Three identical 5 mm fibre-cement cubic house models installed side-by-side: Unit A (Uncoated Control Reference), Unit B (Commercial Conventional White Paint), and Unit C (Nanostructured Cool Paint: HGM + nano-BaSO<sub>4</sub> roof &amp; IR-pigment + nano-ZnO walls).</td>
+              </tr>
+              <tr>
+                <td>Compute &amp; Acquisition Nodes</td>
+                <td>Espressif <code>ESP32</code> microcontrollers executing deterministic 1-minute synchronous sampling loops across all internal and external sensor arrays.</td>
+              </tr>
+              <tr>
+                <td>Sensor Suite</td>
+                <td>
+                  <strong>Internal Air:</strong> Calibrated <code>DHT22</code> (&plusmn;0.5 &deg;C temp, &plusmn;2% RH).<br>
+                  <strong>Envelope Surface:</strong> Direct-contact waterproof <code>DS18B20</code> 1-Wire thermal probes embedded beneath the roof and wall coatings.<br>
+                  <strong>Ambient Weather:</strong> High-dynamic-range <code>BH1750</code> digital ambient light sensor (0&ndash;65535 lx) and <code>MPL3115A2</code> precision barometric pressure sensor.
+                </td>
+              </tr>
+              <tr>
+                <td>Telemetry &amp; Data Pipeline</td>
+                <td>Dual-redundant telemetry stack streaming JSON packets over MQTT to AWS IoT Core and ThingSpeak cloud backends, with local SPI micro-SD card binary buffering to prevent data loss during campus network outages.</td>
+              </tr>
+              <tr>
+                <td>Analytical Modeling</td>
+                <td>ISO 6946:2017 thermal envelope scaling model (&kappa;<sub>eff</sub> = 0.372) calculating indoor cooling loads and projecting annual kWh electrical savings for a standard 4-storey residential building in Dhaka.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experimental Field Gallery</h2>
+        <div class="gallery-grid">
+          
+          <figure class="figure-card">
+            <div class="figure-img-wrapper">
+              <img src="../assets/img/projects/cool-paint-setup.jpg" alt="Rooftop pilot house testbeds and weather station on BUET ECE rooftop" class="figure-img">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 1:</strong> Outdoor testing facility on the BUET ECE rooftop showing the three pilot house models (Unit A, B, C) and the central IoT telemetry weather logger station.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper">
+              <img src="../assets/img/projects/cool-paint-box.jpg" alt="Weather-sealed IoT data acquisition node enclosure with sensors" class="figure-img">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 2:</strong> Weatherproof data acquisition enclosure featuring the ESP32 host, sensor breakout cabling, and solar-charging backup power subsystem.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- Associated Publications -->
+      <section style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <h3>Related Manuscript</h3>
+        <p>
+          <em>"Multi-Seasonal Assessment of Nanostructured Cool Paints for Passive Radiative Cooling in Tropical Climates Using IoT Sensor Networks"</em> &mdash; Md. Abdus Shakur Siam, Md. Fahim Hossain, Ahmed Imtiaz, A. S. M. Obaidullah Mahmud, Muhammad Anisuzzaman Talukder. Manuscript Complete; Pending Submission, <strong>Elsevier Energy and Buildings</strong> (2026).
+        </p>
+        <a href="../research.html#paper-cool-paint" class="project-link">&rarr; View Paper Abstract &amp; BibTeX</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Md. Abdus Shakur Siam
+      </div>
+      <div class="footer-socials">
+        <a href="https://orcid.org/0000-0003-4628-1832" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="ORCID">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.434h2.238c2.644 0 3.787-1.744 3.787-3.712 0-2.156-1.372-3.722-3.722-3.722h-2.303z"/></svg>
+        </a>
+        <a href="https://github.com/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:shakursiam@gmail.com" class="footer-social-link" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

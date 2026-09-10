@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research &amp; Publications | Md. Abdus Shakur Siam</title>
+  
+  <meta name="author" content="Md. Abdus Shakur Siam">
+  <meta name="description" content="Research publications and manuscripts on Edge AI, In-Sensor Computing, Battery Health Prognostics, AI-IoT Security, and Cyber-Physical Systems.">
+  <meta name="keywords" content="Research Papers, Edge AI, Battery State-of-Health, In-Sensor Computing, Post-Quantum IoT, AI-IoT Security, BUET">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script>
+    (function() {
+      var saved = localStorage.getItem('shakursiam_theme_preference');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="navbar-brand" title="Homepage">
+        <span class="initials">SIAM</span>
+        <span>Md. Abdus Shakur Siam</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">About</a></li>
+          <li><a href="research.html" class="nav-link active">Research</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="cv.html" class="nav-link">CV</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <svg class="icon-sun" style="display:none;" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"></line>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"></line>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      
+      <div style="margin-bottom: 2rem;">
+        <h1>Research &amp; Publications</h1>
+        <p style="font-size: 1.05rem;">
+          Bridging physical hardware constraints and machine learning through hardware-software co-design, ultra-low-power edge intelligence, battery prognostics, and empirical IoT security.
+        </p>
+      </div>
+
+      <!-- ================= PAPER 1 ================= -->
+      <article class="paper-entry" id="paper-soh">
+        <div class="paper-meta-header">
+          <span class="paper-venue-badge">Target: Elsevier Journal of Energy Storage</span>
+          <span class="paper-status-pill">Under Final Review</span>
+        </div>
+
+        <h2 class="paper-title">
+          Edge-Deployed Battery State-of-Health Estimation on a Custom Synchronous Buck Charging Platform: A Cross-Dataset Lightweight Machine Learning Framework
+        </h2>
+
+        <div class="paper-authors">
+          <span class="author-self">Md. Abdus Shakur Siam</span>, Muhammad Anisuzzaman Talukder
+        </div>
+
+        <!-- Hardware & Profiling Metrics Strip -->
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <span class="metric-val">52 &plusmn; 15 &micro;s</span>
+            <span class="metric-label">Steady-State Latency (3.7&times; faster than MLPs)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">&le; 21 &micro;J</span>
+            <span class="metric-label">Marginal Inference Energy (soh_predict)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">1.80% MAE</span>
+            <span class="metric-label">60-min Charging Window (Samsung 26E NMC)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">432 KB</span>
+            <span class="metric-label">Binary Size (within 500 KB edge limit)</span>
+          </div>
+        </div>
+
+        <!-- Core Contributions -->
+        <ul class="contributions-list">
+          <li>
+            <span class="badge-tag">[C1]</span>
+            <strong>Hardware-Software Co-Design:</strong> Engineered the custom Edge-SBC board integrating a 600 kHz BQ24610 synchronous buck controller, INA219 current/voltage monitor (12-bit, 2 mA resolution), DS18B20 1-Wire temperature sensor, and ESP32-S3 host.
+          </li>
+          <li>
+            <span class="badge-tag">[C2]</span>
+            <strong>Zero-Data-Leakage Feature Pipeline:</strong> Engineered 35 electrochemically grounded cycle-level features. Implemented Float32 downcasting and C-header transpilation (<code>soh_model.h</code>) executing without external runtime ML dependencies.
+          </li>
+          <li>
+            <span class="badge-tag">[C3]</span>
+            <strong>Benchmark Generalization:</strong> Conducted a 32-experiment cross-dataset study across NASA (NCA), Oxford (LCO), MIT/Severson (LFP), and CALCE CS2 (LCO), establishing protocol affinity as the dominant transfer enabler (cross-dataset R<sup>2</sup> = 0.761).
+          </li>
+          <li>
+            <span class="badge-tag">[C4]</span>
+            <strong>Live Physical-in-the-Loop (PhIL) Validation:</strong> Real-time on-chip inference during active CC/CV charging across 18650 NMC and LCO cells, achieving 1.80% MAE (60-min window, NMC) and 2.38% MAE (EOC, LCO).
+          </li>
+        </ul>
+
+        <!-- Visual / Schematic Section -->
+        <div style="margin: 1.25rem 0;">
+          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff;">
+            <img src="assets/img/projects/Edge Deployment Pipeline.jpg" alt="Edge-SBC End-to-End ML Transpilation & Profiling Pipeline" class="figure-img" style="object-fit: contain;">
+          </div>
+        </div>
+
+        <!-- Abstract Dropdown -->
+        <details class="paper-abstract">
+          <summary>Read Full Abstract</summary>
+          <div class="abstract-content">
+            Accurate State-of-Health (SOH) estimation is critical for battery management across electric vehicles and energy storage systems. However, existing algorithmic solutions rely heavily on power-intensive cloud compute or complex recurrent neural networks that exceed the memory and power budgets of embedded microcontrollers. In this work, we demonstrate an end-to-end hardware-software co-designed Edge Battery Prognostics platform (Edge-SBC). By pairing a 600 kHz BQ24610 synchronous buck converter with an ESP32-S3 host, we extract 35 electrochemically grounded cycle features in real time during active CC/CV charging. The trained model is transpiled directly to C headers via Float32 downcasting, achieving 52 µs latency and requiring less than 21 µJ per inference traversal. Validated across multi-chemistry datasets (NMC, LCO, LFP, NCA) and physical hardware-in-the-loop experiments, our framework achieves 1.80% MAE without external ML runtimes.
+          </div>
+        </details>
+
+        <!-- Action Buttons -->
+        <div class="paper-actions">
+          <a href="projects/edge-sbc.html" class="btn-action btn-primary">Hardware Case Study &rarr;</a>
+          <button class="btn-action open-bibtex-btn" data-bibtex-target="bibtex-paper-1">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            BibTeX
+          </button>
+        </div>
+
+        <!-- Hidden BibTeX Source -->
+        <pre id="bibtex-paper-1" style="display:none;">@article{siam2026edge,
+  title={Edge-Deployed Battery State-of-Health Estimation on a Custom Synchronous Buck Charging Platform: A Cross-Dataset Lightweight Machine Learning Framework},
+  author={Siam, Md. Abdus Shakur and Talukder, Muhammad Anisuzzaman},
+  journal={Elsevier Journal of Energy Storage (Under Final Review)},
+  year={2026}
+}</pre>
+      </article>
+
+      <!-- ================= PAPER 2 ================= -->
+      <article class="paper-entry" id="paper-aiot-survey">
+        <div class="paper-meta-header">
+          <span class="paper-venue-badge">Target: Elsevier Journal of Network and Computer Applications</span>
+          <span class="paper-status-pill">Under Review</span>
+        </div>
+
+        <h2 class="paper-title">
+          Privacy and Secure Networking in AI-enabled Internet of Things Systems: A Review
+        </h2>
+
+        <div class="paper-authors">
+          <span class="author-self">Md. Abdus Shakur Siam</span>, Shamik Dey, Muhammad Imran Ali, Md. Sabit Shahriar Haque, Omar Farrok
+        </div>
+
+        <!-- Metric Strip -->
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <span class="metric-val">168 Papers</span>
+            <span class="metric-label">Synthesized (2019&ndash;2026) across 4D Taxonomy</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">51% (44/86)</span>
+            <span class="metric-label">Privacy Deficit: Lack formal (&epsilon;, &delta;)-DP proofs</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">10&ndash;28 Frags</span>
+            <span class="metric-label">PQC Migration Penalty on IEEE 802.15.4 (127B MTU)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">12&ndash;48&times;</span>
+            <span class="metric-label">Radio Energy Overhead for Post-Quantum Handshake</span>
+          </div>
+        </div>
+
+        <ul class="contributions-list">
+          <li>
+            <span class="badge-tag">[S1]</span>
+            <strong>4D Systematic Taxonomy:</strong> Classified 168 papers spanning System Layer &times; AI Lifecycle &times; Threat Vector &times; AI Paradigm (Discriminative ML, Generative AI, Foundation Models).
+          </li>
+          <li>
+            <span class="badge-tag">[S2]</span>
+            <strong>The Benchmark-to-Deployment Gap:</strong> Identified that only 3 of 168 papers validate on physical IoT testbeds; revealed cross-domain transfer drops of up to 58.6 F1 points.
+          </li>
+          <li>
+            <span class="badge-tag">[S3]</span>
+            <strong>Formal Privacy Deficit:</strong> Uncovered that 51% of privacy-claiming IoT papers rely solely on heuristic Federated Learning without formal mathematical bounds or cryptographic proofs.
+          </li>
+          <li>
+            <span class="badge-tag">[S4]</span>
+            <strong>Post-Quantum Fragmentation Bottleneck:</strong> First-order derivation showing NIST FIPS 203 (ML-KEM-512) and FIPS 204 (ML-DSA-44) cause 10&ndash;28 fragments on 127-byte MTU, driving packet loss to 18&ndash;43%.
+          </li>
+          <li>
+            <span class="badge-tag">[S5]</span>
+            <strong>Standardized Framework:</strong> Formulated 7 Standards-Traceable Deployment Readiness Requirements (DR-1 to DR-7) aligned to NIST AI RMF 1.0, ISO/IEC 42001:2023, and IEEE Std 2413-2019.
+          </li>
+        </ul>
+
+        <details class="paper-abstract">
+          <summary>Read Full Abstract</summary>
+          <div class="abstract-content">
+            The confluence of Artificial Intelligence and the Internet of Things (AIoT) promises autonomous sensing and real-time intelligence across critical cyber-physical domains. However, deploying learning models at the network edge exacerbates vulnerabilities across data privacy, model integrity, and transport networking. In this comprehensive review, we synthesize 168 studies published between 2019 and 2026 under a systematic 4-dimensional taxonomy. We unveil critical systemic vulnerabilities: over half of surveyed privacy-preserving frameworks fail to provide formal differential privacy or cryptographic guarantees, and only 1.8% evaluate against real-world physical IoT testbeds. Furthermore, we derive the network fragmentation penalties incurred when transitioning low-power wireless stacks (IEEE 802.15.4 / 6LoWPAN) to post-quantum cryptography standards (ML-KEM, ML-DSA). Finally, we articulate seven standards-traceable deployment readiness criteria to guide robust, provable AIoT engineering.
+          </div>
+        </details>
+
+        <div class="paper-actions">
+          <button class="btn-action open-bibtex-btn" data-bibtex-target="bibtex-paper-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            BibTeX
+          </button>
+        </div>
+
+        <pre id="bibtex-paper-2" style="display:none;">@article{siam2026privacy,
+  title={Privacy and Secure Networking in AI-enabled Internet of Things Systems: A Review},
+  author={Siam, Md. Abdus Shakur and Dey, Shamik and Ali, Muhammad Imran and Haque, Md. Sabit Shahriar and Farrok, Omar},
+  journal={Elsevier Journal of Network and Computer Applications (Under Review)},
+  year={2026}
+}</pre>
+      </article>
+
+      <!-- ================= PAPER 3 ================= -->
+      <article class="paper-entry" id="paper-cool-paint">
+        <div class="paper-meta-header">
+          <span class="paper-venue-badge">Target: Elsevier Energy and Buildings</span>
+          <span class="paper-status-pill">Manuscript Complete</span>
+        </div>
+
+        <h2 class="paper-title">
+          Multi-Seasonal Assessment of Nanostructured Cool Paints for Passive Radiative Cooling in Tropical Climates Using IoT Sensor Networks
+        </h2>
+
+        <div class="paper-authors">
+          <span class="author-self">Md. Abdus Shakur Siam</span>, Md. Fahim Hossain, Ahmed Imtiaz, A. S. M. Obaidullah Mahmud, Muhammad Anisuzzaman Talukder
+        </div>
+
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <span class="metric-val">4.15 &deg;C</span>
+            <span class="metric-label">Interior Midday Suppression (10.74% cooling)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">~5.0 &deg;C</span>
+            <span class="metric-label">NOAA Heat Index Reduction in Pre-Monsoon Peak</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">7 Months</span>
+            <span class="metric-label">Continuous Real-Time IoT Rooftop Logging</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">164.3 kWh</span>
+            <span class="metric-label">Net Projected 6-Mo Cooling Energy Savings (4-Storey)</span>
+          </div>
+        </div>
+
+        <ul class="contributions-list">
+          <li>
+            <span class="badge-tag">[H1]</span>
+            <strong>Rooftop IoT Testbed Deployment:</strong> Deployed a custom ESP32/DHT22 sensing array across three 5 mm fibre-cement pilot house models on the BUET ECE rooftop over 7 continuous months (Nov 2024 &ndash; May 2025).
+          </li>
+          <li>
+            <span class="badge-tag">[H2]</span>
+            <strong>Dual-Component Nanocoating Evaluation:</strong> Evaluated advanced formulations combining Hollow Glass Microspheres (HGM) + nano-BaSO<sub>4</sub> on roofs and IR-reflective pigment + nano-ZnO on vertical walls.
+          </li>
+          <li>
+            <span class="badge-tag">[H3]</span>
+            <strong>Empirical Validation &amp; Lab Chamber Corroboration:</strong> Recorded peak midday internal temperature reduction of 4.15 &deg;C in April heat, confirmed by controlled IR step-heating chamber tests (8.0 &deg;C surface suppression vs conventional paint, 12.0 &deg;C vs bare cement).
+          </li>
+          <li>
+            <span class="badge-tag">[H4]</span>
+            <strong>Standardized Scaling Projection:</strong> Executed ISO 6946:2017 building envelope scaling (&kappa;<sub>eff</sub> = 0.372) projecting 164.3 kWh electricity savings and 112.0 kg CO<sub>2</sub> emissions reduction per building envelope.
+          </li>
+        </ul>
+
+        <div style="margin: 1.25rem 0;">
+          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color);">
+            <img src="assets/img/projects/cool-paint-setup.jpg" alt="BUET ECE Rooftop Pilot House Testbed with IoT Weather Station" class="figure-img">
+          </div>
+        </div>
+
+        <details class="paper-abstract">
+          <summary>Read Full Abstract</summary>
+          <div class="abstract-content">
+            Sub-tropical urban centers face escalating heat island intensities, demanding passive thermal management technologies to reduce mechanical cooling reliance. In this study, we present a multi-seasonal empirical assessment of nanostructured radiative cool paints deployed across three scaled pilot test houses on the BUET rooftop in Dhaka, Bangladesh. A custom IoT monitoring architecture continuously measured indoor air temperatures, relative humidity, solar irradiance, and envelope surface temperatures across winter, spring, and pre-monsoon summer seasons. The optimized coating achieves peak internal temperature suppression of 4.15 °C under extreme ambient solar heat. Building envelope thermal modeling under ISO 6946 confirms significant energy and carbon emission abatement benefits for tropical urban climates.
+          </div>
+        </details>
+
+        <div class="paper-actions">
+          <a href="projects/cool-paint-iot.html" class="btn-action btn-primary">IoT Case Study &rarr;</a>
+          <button class="btn-action open-bibtex-btn" data-bibtex-target="bibtex-paper-3">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            BibTeX
+          </button>
+        </div>
+
+        <pre id="bibtex-paper-3" style="display:none;">@article{siam2026multiseasonal,
+  title={Multi-Seasonal Assessment of Nanostructured Cool Paints for Passive Radiative Cooling in Tropical Climates Using IoT Sensor Networks},
+  author={Siam, Md. Abdus Shakur and Hossain, Md. Fahim and Imtiaz, Ahmed and Mahmud, A. S. M. Obaidullah and Talukder, Muhammad Anisuzzaman},
+  journal={Elsevier Energy and Buildings (Manuscript Complete)},
+  year={2026}
+}</pre>
+      </article>
+
+      <!-- ================= PAPER 4 ================= -->
+      <article class="paper-entry" id="paper-eyediseasenet">
+        <div class="paper-meta-header">
+          <span class="paper-venue-badge">Submitted Manuscript</span>
+          <span class="paper-status-pill">Under Review</span>
+        </div>
+
+        <h2 class="paper-title">
+          EyeDiseaseNet: An Explainable and Resource-Efficient Self-Attention Hybrid Network for Multi-Class Ocular Disease Classification
+        </h2>
+
+        <div class="paper-authors">
+          Shamik Dey, Adnan Quaium, Saiful Islam, <span class="author-self">Md. Abdus Shakur Siam</span>
+        </div>
+
+        <!-- Metric Strip -->
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <span class="metric-val">99.13%</span>
+            <span class="metric-label">Overall Classification Accuracy</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">0.9889</span>
+            <span class="metric-label">Cohen's Kappa (Diagnostic Agreement)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">5 Classes</span>
+            <span class="metric-label">Cataract, Uveitis, Conjunctivitis, Eyelid, Normal</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">VGG19 + MobileNet</span>
+            <span class="metric-label">Self-Attention Hybrid + Grad-CAM XAI</span>
+          </div>
+        </div>
+
+        <ul class="contributions-list">
+          <li>
+            <span class="badge-tag">[O1]</span>
+            <strong>Hybrid Feature-Fusion Backbone:</strong> Fuses VGG19 and MobileNetV2 representations augmented with a lightweight self-attention mechanism, isolating fine pathological patterns with minimal computational overhead.
+          </li>
+          <li>
+            <span class="badge-tag">[O2]</span>
+            <strong>Robust Preprocessing Pipeline:</strong> Integrates Contrast Limited Adaptive Histogram Equalization (CLAHE) and Non-Local Means Denoising to eliminate noise and correct illumination artifacts without blurring vital tissue boundaries.
+          </li>
+          <li>
+            <span class="badge-tag">[O3]</span>
+            <strong>Multi-Class Clinical Evaluation:</strong> Evaluated on 6,894 anterior segment eye images across five diagnostic categories, demonstrating 99.13% overall accuracy and markedly outperforming standalone baselines.
+          </li>
+          <li>
+            <span class="badge-tag">[O4]</span>
+            <strong>Visual Explainability via Grad-CAM:</strong> Integrated Gradient-weighted Class Activation Mapping to generate spatial attention heatmaps, providing transparent diagnostic validation for clinicians.
+          </li>
+        </ul>
+
+        <!-- Visual / Schematic Section -->
+        <div style="margin: 1.25rem 0;">
+          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color);">
+            <img src="assets/img/eyediseasenet-workflow.png" alt="EyeDiseaseNet Multi-Stream Preprocessing, Hybrid Architecture, and Grad-CAM Workflow" class="figure-img">
+          </div>
+        </div>
+
+        <details class="paper-abstract">
+          <summary>Read Full Abstract</summary>
+          <div class="abstract-content">
+            Ocular diseases including cataracts, uveitis, conjunctivitis, and eyelid disorders, are primary causes of global visual impairment. Early identification is essential to prevent permanent vision loss, yet resource-constrained areas frequently lack accessible ophthalmic screening tools. Although deep learning architectures show promise in automated diagnostics, existing systems often struggle to distinguish visually similar conditions, demand excessive computational resources, and operate as uninterpretable black boxes. To address these limitations, we present EyeDiseaseNet, a multi-stream hybrid deep learning architecture designed for multi-class ocular disease classification. Our framework implements a robust image preprocessing pipeline combining Contrast Limited Adaptive Histogram Equalization (CLAHE) and Non-Local Means Denoising to eliminate noise and correct illumination artifacts. The model combines global and local structural features by fusing VGG19 and MobileNetV2 representations, which are further augmented with a lightweight self-attention mechanism to isolate fine pathological patterns. Furthermore, we integrate Gradient-weighted Class Activation Mapping (Grad-CAM) to generate spatial attention heatmaps, providing visual explanations for each diagnosis. Experimentally evaluated on a balanced multi-class dataset of 6,894 anterior segment eye images, EyeDiseaseNet achieved an overall classification accuracy of 99.13% and a Cohen’s Kappa score of 0.9889, markedly outperforming standalone baseline models. These results demonstrate that EyeDiseaseNet provides an accurate, explainable, and resource-efficient solution highly suitable for real-world clinical decision support systems.
+          </div>
+        </details>
+
+        <div class="paper-actions">
+          <button class="btn-action open-bibtex-btn" data-bibtex-target="bibtex-paper-4">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            BibTeX
+          </button>
+        </div>
+
+        <pre id="bibtex-paper-4" style="display:none;">@article{dey2026eyediseasenet,
+  title={EyeDiseaseNet: An Explainable and Resource-Efficient Self-Attention Hybrid Network for Multi-Class Ocular Disease Classification},
+  author={Dey, Shamik and Quaium, Adnan and Islam, Saiful and Siam, Md. Abdus Shakur},
+  journal={Under Review},
+  year={2026}
+}</pre>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- BibTeX Modal Container -->
+  <div id="bibtex-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="bibtex-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h4 id="bibtex-modal-title">BibTeX Citation</h4>
+        <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <pre><code id="bibtex-code"></code></pre>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button id="modal-copy-btn" class="btn-action btn-primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            Copy to Clipboard
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Md. Abdus Shakur Siam
+      </div>
+      <div class="footer-socials">
+        <a href="https://orcid.org/0000-0003-4628-1832" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="ORCID">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.434h2.238c2.644 0 3.787-1.744 3.787-3.712 0-2.156-1.372-3.722-3.722-3.722h-2.303z"/></svg>
+        </a>
+        <a href="https://github.com/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:shakursiam@gmail.com" class="footer-social-link" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edge-SBC: Hardware-Software Co-Design for Battery Prognostics | Md. Abdus Shakur Siam</title>
+  
+  <meta name="author" content="Md. Abdus Shakur Siam">
+  <meta name="description" content="Edge-SBC: Autonomous 600 kHz synchronous buck battery charger and on-chip lightweight machine learning inference system for real-time battery health prognostics.">
+  <meta name="keywords" content="Edge-SBC, BQ24610, ESP32-S3, Battery State of Health, SOH Estimation, TinyML, Hardware-Software Co-Design, BUET">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function() {
+      var saved = localStorage.getItem('shakursiam_theme_preference');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="navbar-brand" title="Homepage">
+        <span class="initials">SIAM</span>
+        <span>Md. Abdus Shakur Siam</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">About</a></li>
+          <li><a href="../research.html" class="nav-link">Research</a></li>
+          <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="../cv.html" class="nav-link">CV</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <svg class="icon-sun" style="display:none;" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"></line>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"></line>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      
+      <nav class="breadcrumb-nav">
+        <a href="../projects.html">&larr; Back to Projects Hub</a> / <span>Edge-SBC</span>
+      </nav>
+
+      <header class="case-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <span class="status-badge research">Research Validation</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">HIVE Research Group &bull; BUET</span>
+        </div>
+        <h1 style="margin-bottom: 0.5rem;">Edge-SBC: Hardware-Software Co-Design for Battery Prognostics</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          Custom Synchronous Buck Charging Platform with Real-Time Float32 On-Chip State-of-Health (SOH) Inference.
+        </p>
+
+        <div class="tech-pills-row">
+          <span class="tech-pill">BQ24610RGER</span>
+          <span class="tech-pill">ESP32-S3FN8</span>
+          <span class="tech-pill">INA219 / INA238</span>
+          <span class="tech-pill">DS18B20</span>
+          <span class="tech-pill">SI7617DN MOSFETs</span>
+          <span class="tech-pill">KiCad</span>
+          <span class="tech-pill">FreeRTOS</span>
+          <span class="tech-pill">scikit-learn</span>
+          <span class="tech-pill">TinyML</span>
+        </div>
+
+        <div class="case-meta-grid">
+          <div class="case-meta-item">
+            <span class="label">Role</span>
+            <div class="val">Lead Hardware &amp; Embedded Researcher</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Affiliation</span>
+            <div class="val">Dept. of EEE, BUET</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Status</span>
+            <div class="val">Under Final Review (J. Energy Storage)</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Key Benchmark</span>
+            <div class="val">52 &micro;s Inference &bull; 1.80% MAE</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- System Architecture & Engineering Specifications -->
+      <section>
+        <h2>System Architecture &amp; Hardware Specifications</h2>
+        <p>
+          The Edge-SBC board bridges power electronics with machine learning inference at the extreme edge. Rather than relying on cloud telemetry or heavy embedded neural network runtimes, the system pairs a high-frequency autonomous buck charger with an ESP32-S3 host MCU running native C-transpiled model trees.
+        </p>
+
+        <div class="specs-table-wrapper">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Subsystem</th>
+                <th>Hardware Implementation &amp; Operational Parameters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Buck Controller</td>
+                <td>Autonomous 600 kHz NMOS-NMOS synchronous buck controller (Texas Instruments <code>BQ24610RGER</code>) executing autonomous 3-phase CC/CV regulation without host CPU intervention.</td>
+              </tr>
+              <tr>
+                <td>Host MCU</td>
+                <td>Espressif <code>ESP32-S3FN8</code> (Dual-Core Xtensa&reg; LX7 @ 240 MHz, 512 KB SRAM, 8 MB Quad-SPI Flash).</td>
+              </tr>
+              <tr>
+                <td>Current &amp; Voltage Telemetry</td>
+                <td>High-side precision current shunt monitor (<code>INA219</code> / <code>INA238</code>) reading an in-line 5 m&Omega; 2W shunt (R005) with 12-bit ADC, 10 &micro;V/LSB resolution, achieving 2 mA current measurement up to 8 A range.</td>
+              </tr>
+              <tr>
+                <td>Thermal Monitoring</td>
+                <td>1-Wire digital thermometer (<code>DS18B20</code>) with &plusmn;0.5 &deg;C accuracy mounted directly on the battery cell casing.</td>
+              </tr>
+              <tr>
+                <td>Power Switching &amp; Power Path</td>
+                <td>Dual high-performance low-RDS(on) N-channel power MOSFETs (<code>SI7617DN-T1-GE3</code>); step-down regulation via <code>XL2596S-5.0</code> and low-noise <code>AP2112K-3.3</code> LDO.</td>
+              </tr>
+              <tr>
+                <td>Cell Chemistries Supported</td>
+                <td>Configurable 1S to 4S Li-ion/LiPo packs (4.2 V to 16.8 V) selectable via hardware jumper matrix and programmable ISET1/ISET2 charge current dividers.</td>
+              </tr>
+              <tr>
+                <td>Firmware Architecture</td>
+                <td>Preemptive FreeRTOS state machine (<code>idle</code> &rarr; <code>precharge</code> &rarr; <code>cc_charge</code> &rarr; <code>cv_charge</code> &rarr; <code>terminate</code>) with batch-buffered SPI micro-SD logging (32 records/batch).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- On-Device Inference Pipeline -->
+      <section>
+        <h2>On-Device Machine Learning Pipeline</h2>
+        <p>
+          To maintain real-time execution within strict microcontroller power envelopes, the inference pipeline bypasses standard high-overhead ML frameworks (e.g., TFLite Micro, CMSIS-NN) in favor of direct algorithmic transpilation.
+        </p>
+
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <span class="metric-val">52 &plusmn; 15 &micro;s</span>
+            <span class="metric-label">Steady-State Latency</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">&le; 21 &micro;J</span>
+            <span class="metric-label">Energy per Inference</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">3.5%</span>
+            <span class="metric-label">Active Power Overhead (13.6 mW)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">432 KB</span>
+            <span class="metric-label">Firmware Footprint (vs 500 KB limit)</span>
+          </div>
+        </div>
+
+        <div class="contributions-list">
+          <li>
+            <span class="badge-tag">[1]</span>
+            <strong>Feature Engineering (35 Dimensions):</strong> Extracted causally from voltage dynamics, quantile distribution, numerical incremental capacity analysis (&Delta;Q/&Delta;V), and rolling variance during CC charging.
+          </li>
+          <li>
+            <span class="badge-tag">[2]</span>
+            <strong>Float32 Parameter Downcasting:</strong> Transpiled trained decision ensembles from 64-bit double precision down to 32-bit single precision floats directly into pure C headers (<code>soh_model.h</code>).
+          </li>
+          <li>
+            <span class="badge-tag">[3]</span>
+            <strong>Zero Data Leakage:</strong> Enforced strict cycle-level temporal isolation across 32 training experiments on NASA, Oxford, MIT, and CALCE datasets.
+          </li>
+          <li>
+            <span class="badge-tag">[4]</span>
+            <strong>Physical-in-the-Loop Validation:</strong> Verified on physical Samsung 26E NMC cells (1.80% MAE at 60-min window) and Doublepow LCO cells (2.38% MAE at end-of-charge).
+          </li>
+        </div>
+      </section>
+
+      <!-- Visual Engineering Gallery -->
+      <section>
+        <h2>Hardware &amp; Experimental Gallery</h2>
+        <div class="gallery-grid">
+          
+          <figure class="figure-card">
+            <div class="figure-img-wrapper">
+              <img src="../assets/img/projects/edge-sbc-pcb.jpg" alt="Edge-SBC Fabricated Four-Layer PCB with Labeled Components" class="figure-img">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 1:</strong> Fabricated Edge-SBC four-layer PCB showing the ESP32-S3 host module, BQ24610 buck controller, current shunt resistor, and cell connection terminal block.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: #ffffff;">
+              <img src="../assets/img/projects/edge-sbc-block.jpg" alt="System-level block diagram of the Edge-SBC" class="figure-img" style="object-fit: contain;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 2:</strong> System-level block diagram of the Edge-SBC. Solid arrows indicate power flow; dashed arrows indicate data and control signals.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: #ffffff;">
+              <img src="../assets/img/projects/Edge Deployment Pipeline.jpg" alt="Edge deployment pipeline flowchart" class="figure-img" style="object-fit: contain;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 3:</strong> Edge deployment pipeline, from training through Float32 precision downcasting and C header transpilation to on-device inference.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper">
+              <img src="../assets/img/projects/edge-sbc-bench.jpg" alt="Laboratory testbed measuring snap SOH during the charging phase" class="figure-img">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 4:</strong> Laboratory testbed measuring snap SOH during the charging phase.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- Associated Publications -->
+      <section style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <h3>Related Manuscript</h3>
+        <p>
+          <em>"Edge-Deployed Battery State-of-Health Estimation on a Custom Synchronous Buck Charging Platform: A Cross-Dataset Lightweight Machine Learning Framework"</em> &mdash; Md. Abdus Shakur Siam, Muhammad Anisuzzaman Talukder. Under Final Review, <strong>Elsevier Journal of Energy Storage</strong> (2026).
+        </p>
+        <a href="../research.html#paper-soh" class="project-link">&rarr; View Paper Abstract &amp; BibTeX</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Md. Abdus Shakur Siam
+      </div>
+      <div class="footer-socials">
+        <a href="https://orcid.org/0000-0003-4628-1832" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="ORCID">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.434h2.238c2.644 0 3.787-1.744 3.787-3.712 0-2.156-1.372-3.722-3.722-3.722h-2.303z"/></svg>
+        </a>
+        <a href="https://github.com/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:shakursiam@gmail.com" class="footer-social-link" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
