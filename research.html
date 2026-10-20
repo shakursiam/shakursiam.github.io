@@ -78,6 +78,196 @@
       </div>
 
       <!-- ================= PAPER 1 ================= -->
+      <article class="paper-entry" id="paper-tinyml-fl-energy">
+        <div class="paper-meta-header">
+          <span class="paper-venue-badge">Target: IEEE Transactions on Machine Learning in Communications and Networking</span>
+          <span class="paper-status-pill">Under Review</span>
+        </div>
+
+        <h2 class="paper-title">
+          Energy Allocation Between Computation and Wi-Fi Transmission in TinyML Federated Learning: A Measured Crossover
+        </h2>
+
+        <div class="paper-authors">
+          <span class="author-self">Md. Abdus Shakur Siam</span>, Farag Azzedin
+        </div>
+
+        <!-- Hardware & Profiling Metrics Strip -->
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <span class="metric-val">E<sup>&star;</sup> &approx; 9.7 Epochs</span>
+            <span class="metric-label">Measured Hardware Crossover (E<sup>&star;</sup> &approx; 7.4 in 2nd session)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">1.00 mJ / epoch</span>
+            <span class="metric-label">On-Device Training Cost (152 ms for E=20, zero constant overhead)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">9.7 mJ / turn</span>
+            <span class="metric-label">Wi-Fi 2.4 GHz Exchange (3,120-byte model updates)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">95%&ndash;99% Error</span>
+            <span class="metric-label">Shannon &amp; Switching Models Underestimate Energy</span>
+          </div>
+        </div>
+
+        <!-- Core Contributions -->
+        <ul class="contributions-list">
+          <li>
+            <span class="badge-tag">[FL1]</span>
+            <strong>First Instrumented Crossover Measurement:</strong> Conducted the first physically instrumented measurement of the computation&ndash;communication energy crossover for Federated Learning over Wi-Fi on an ESP32-S3 microcontroller, sampled at 1 kHz with an external INA238 power monitor and GPIO hardware attribution markers across 60 randomized runs (E &isin; {1, 2, 5, 8, 10, 20}).
+          </li>
+          <li>
+            <span class="badge-tag">[FL2]</span>
+            <strong>Radio Tail Energy Characterization:</strong> Isolated the post-communication Wi-Fi radio tail in a 45-run experiment, demonstrating that on-device training initiated immediately after a radio burst absorbs &sim;0.5 mJ of decaying RF tail energy, which a 60 ms inter-burst pause cleanly eliminates.
+          </li>
+          <li>
+            <span class="badge-tag">[FL3]</span>
+            <strong>Closed-Form Crossover with Sleep &amp; Contention:</strong> Derived a closed-form analytical crossover model incorporating standby/sleep power and channel contention; proved that sleeping between rounds shifts the crossover point monotonically toward the ratio of exchange time to epoch time (11 to 19 epochs under typical sleep powers).
+          </li>
+          <li>
+            <span class="badge-tag">[FL4]</span>
+            <strong>Analytical Model Failure Breakdown:</strong> Evaluated five prevalent analytical wireless FL models (including Shannon-capacity transmission and dynamic switching energy models), demonstrating they underestimate physical energy dissipation by 95% to 99% due to neglecting baseline quiescent awake power.
+          </li>
+          <li>
+            <span class="badge-tag">[FL5]</span>
+            <strong>Measurement-Calibrated Tuning Procedure:</strong> Formulated a practical, measurement-calibrated algorithm to guide local epoch selection (E), decoupling the hardware energy crossover E<sup>&star;</sup> from learning convergence E<sub>opt</sub>.
+          </li>
+        </ul>
+
+        <!-- Visual / Schematic Section -->
+        <div style="margin: 1.25rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff; padding: 0.5rem;">
+            <img src="assets/img/tinyml-fl-powertrace.png" alt="ESP32-S3 TinyML Federated Learning 1 kHz Power Trace and GPIO Markers" class="figure-img" style="object-fit: contain; width: 100%;">
+            <span style="display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">Measured 1 kHz power trace of client turn (E=20): training burst, download, pause, and upload.</span>
+          </div>
+          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff; padding: 0.5rem;">
+            <img src="assets/img/tinyml-fl-crossover.png" alt="Measured Marginal Energy per Turn and Crossover Point" class="figure-img" style="object-fit: contain; width: 100%;">
+            <span style="display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">Marginal energy per client turn vs local epochs E establishing the crossover at E* &approx; 9.7.</span>
+          </div>
+        </div>
+
+        <details class="paper-abstract">
+          <summary>Read Full Abstract</summary>
+          <div class="abstract-content">
+            Wireless federated learning (FL) is usually designed on the assumption that radio transmission costs far more energy than on-device computation. We test this assumption on a microcontroller. An ESP32-S3 trains the last layer of a frozen keyword-spotting network and exchanges 3,120-byte updates over 2.4 GHz Wi-Fi, while an independent INA238 monitor samples its supply at 1 kHz and GPIO markers separate computation from communication. To our knowledge, this is the first instrumented measurement of the computation–communication energy crossover for FL over Wi-Fi. In a 60-run campaign over E &isin; {1, 2, 5, 8, 10, 20} local epochs, computation costs 1.00 mJ per epoch with no detectable constant term, and communication costs 9.7 mJ per client turn with no trend in E, so the two are equal at E* &approx; 9.7. A second session gives 7.4 mJ and E* &approx; 7.4, so the crossover depends on radio conditions. A 45-run test shows that training started immediately after a radio burst absorbs about 0.5 mJ of radio tail energy, which a 60 ms pause removes. Shannon-capacity and switching-energy models underestimate the energies by 95% to 99%, and a datasheet-current model is within about 10% only at its nominal point. We prove that sleeping between rounds moves the crossover toward the ratio of exchange time to epoch time; with assumed sleep powers this gives 11 to 19 epochs. We give a measurement-calibrated procedure for choosing E and design guidelines, and we state which quantities are measured and which are assumed.
+          </div>
+        </details>
+
+        <div class="paper-actions">
+          <a href="assets/pdf/Energy_Allocation_TinyML_Federated_Learning.pdf" target="_blank" rel="noopener noreferrer" class="btn-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Full Paper (PDF)
+          </a>
+          <button class="btn-action open-bibtex-btn" data-bibtex-target="bibtex-paper-fl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            BibTeX
+          </button>
+        </div>
+
+        <pre id="bibtex-paper-fl" style="display:none;">@article{siam2026energyfl,
+  title={Energy Allocation Between Computation and Wi-Fi Transmission in TinyML Federated Learning: A Measured Crossover},
+  author={Siam, Md. Abdus Shakur and Azzedin, Farag},
+  journal={IEEE Transactions on Machine Learning in Communications and Networking (Under Review)},
+  year={2026}
+}</pre>
+      </article>
+
+      <!-- ================= PAPER 2 ================= -->
+      <article class="paper-entry" id="paper-kws-cortexm4-quantization">
+        <div class="paper-meta-header">
+          <span class="paper-venue-badge">NSysS 2026 (Cox’s Bazar, Bangladesh)</span>
+          <span class="paper-status-pill">Under Review</span>
+        </div>
+
+        <h2 class="paper-title">
+          Quantization as a Deployability Gate for Keyword Spotting on a Cortex-M4 MCU
+        </h2>
+
+        <div class="paper-authors">
+          <span class="author-self">Md. Abdus Shakur Siam</span>
+        </div>
+
+        <!-- Hardware & Profiling Metrics Strip -->
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <span class="metric-val">1 of 4 Deploys</span>
+            <span class="metric-label">Full-Integer INT8 Solo Survivor (Binary Deployability Gate)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">92.25% Acc</span>
+            <span class="metric-label">Matches 92.18% FP32 Ceiling (+0.07% vs FP32 baseline)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">62.3 KB / 69.5 KB</span>
+            <span class="metric-label">Flash / SRAM Footprint (fits STM32 128 KiB SRAM limit)</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-val">4.39 &plusmn; 0.02 mJ</span>
+            <span class="metric-label">Measured Energy per Inference @ 180 MHz (158.72 ms latency)</span>
+          </div>
+        </div>
+
+        <!-- Core Contributions -->
+        <ul class="contributions-list">
+          <li>
+            <span class="badge-tag">[Q1]</span>
+            <strong>Controlled Four-Way PTQ Benchmark:</strong> Conducted a controlled, single-pipeline comparison of four standard TensorFlow Lite post-training quantization variants (FP32, float16, dynamic-range INT8, full-integer INT8) for a DS-CNN-S keyword spotting model on Google Speech Commands v2 deployed to a physical STM32 Nucleo-F446RE (Cortex-M4, 180 MHz, 128 KiB SRAM).
+          </li>
+          <li>
+            <span class="badge-tag">[Q2]</span>
+            <strong>The Binary Deployability Gate Discovery:</strong> Uncovered that post-training quantization functions on tight-SRAM microcontrollers not as a continuous accuracy/efficiency dial, but as a hard binary deployability gate: FP32 (256.70 KiB) and dynamic-range INT8 (194.46 KiB) breach SRAM capacity, while float16 is rejected by toolchain tensor support, eliminating 3 of 4 schemes before deployment.
+          </li>
+          <li>
+            <span class="badge-tag">[Q3]</span>
+            <strong>Negligible Quantization Accuracy Cost:</strong> Demonstrated that full-integer INT8 reaches 92.25% test accuracy—essentially matching the 92.18% FP32 reference (a difference of just 0.07 percentage points within a sub-0.4-point spread across all variants)—while reducing flash footprint by 44% (to 62.26 KiB).
+          </li>
+          <li>
+            <span class="badge-tag">[Q4]</span>
+            <strong>Joint Physical Hardware Profiling:</strong> Reported a fully measured (not simulated) trade-off evaluation spanning accuracy, flash, RAM, latency (158.72 ms), and INA238-instrumented energy consumption (4.39 &plusmn; 0.02 mJ) on a physical Cortex-M4 core at maximum 180 MHz clock.
+          </li>
+        </ul>
+
+        <!-- Visual / Schematic Section -->
+        <div style="margin: 1.25rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff; padding: 0.5rem;">
+            <img src="assets/img/kws-quantization-pipeline.png" alt="Keyword Spotting Quantization and Deployability Gate Pipeline" class="figure-img" style="object-fit: contain; width: 100%;">
+            <span style="display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">Experimental pipeline: feature extraction, 4-way PTQ export, X-CUBE-AI static analysis gate, and validation.</span>
+          </div>
+          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff; padding: 0.5rem;">
+            <img src="assets/img/kws-quantization-sram-gate.png" alt="RAM required by each PTQ variant against 128 KiB SRAM budget" class="figure-img" style="object-fit: contain; width: 100%;">
+            <span style="display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">SRAM required by each PTQ variant vs 128 KiB MCU limit: only Full-INT8 survives the deployability gate.</span>
+          </div>
+        </div>
+
+        <details class="paper-abstract">
+          <summary>Read Full Abstract</summary>
+          <div class="abstract-content">
+            Deploying keyword spotting (KWS) on Cortex-M4 microcontrollers requires post-training quantization (PTQ). In practice, however, embedded engineers often discover toolchain incompatibilities and memory overruns only after attempting on-device deployment—long after model selection is complete. This gap matters directly for low-power, edge-intelligence system design. We present a controlled, physically measured comparison of four TensorFlow Lite PTQ variants: FP32, float16, dynamic-range INT8, and full-integer INT8. We apply them to a DS-CNN-S keyword-spotting model trained on Google Speech Commands v2, and deploy each variant to an STM32 Nucleo-F446RE (Cortex-M4, 180 MHz, 128 KiB SRAM) using STM32CubeIDE and X-CUBE-AI. Static analysis shows that FP32 (256.70 KiB RAM) and dynamic-range INT8 (194.46 KiB RAM) both exceed the board’s SRAM budget. Float16 is unsupported by the toolchain for this target family. This leaves full-integer INT8 as the only deployable variant. It reaches 92.25% test accuracy, essentially matching the 92.18% FP32 reference (a difference of just 0.07 percentage points, well inside the sub-0.4-point spread across all four variants), with 62.26 KiB flash, 69.53 KiB RAM, 158.72 ms measured latency, and 4.39 &plusmn; 0.02 mJ measured energy per inference (INA238-based, averaged over three capture repetitions). Our central finding is that, on this board, PTQ scheme selection acts as a binary deployability gate rather than a continuous accuracy/efficiency trade-off. Three of the four standard TFLite PTQ options are inadmissible outright, and the sole survivor pays essentially no accuracy penalty for its footprint and energy savings. We argue that PTQ evaluations for MCU-class edge systems should report on-device feasibility alongside accuracy from the outset, not as an afterthought. We also discuss what this deployability-gate finding means for low-power system designers working under similarly tight SRAM budgets.
+          </div>
+        </details>
+
+        <div class="paper-actions">
+          <a href="assets/pdf/Quantization_Deployability_Gate_CortexM4.pdf" target="_blank" rel="noopener noreferrer" class="btn-action">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Full Paper (PDF)
+          </a>
+          <button class="btn-action open-bibtex-btn" data-bibtex-target="bibtex-paper-quant">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            BibTeX
+          </button>
+        </div>
+
+        <pre id="bibtex-paper-quant" style="display:none;">@inproceedings{siam2026quantization,
+  title={Quantization as a Deployability Gate for Keyword Spotting on a Cortex-M4 MCU},
+  author={Siam, Md. Abdus Shakur},
+  booktitle={Proceedings of the 13th International Conference on Networking, Systems and Security (NSysS 2026)},
+  year={2026}
+}</pre>
+      </article>
+
+      <!-- ================= PAPER 3 ================= -->
       <article class="paper-entry" id="paper-soh">
         <div class="paper-meta-header">
           <span class="paper-venue-badge">Target: Elsevier Journal of Energy Storage</span>
@@ -165,7 +355,7 @@
 }</pre>
       </article>
 
-      <!-- ================= PAPER 2 ================= -->
+      <!-- ================= PAPER 4 ================= -->
       <article class="paper-entry" id="paper-aiot-survey">
         <div class="paper-meta-header">
           <span class="paper-venue-badge">Target: Elsevier Journal of Network and Computer Applications</span>
@@ -245,7 +435,7 @@
 }</pre>
       </article>
 
-      <!-- ================= PAPER 3 ================= -->
+      <!-- ================= PAPER 5 ================= -->
       <article class="paper-entry" id="paper-cool-paint">
         <div class="paper-meta-header">
           <span class="paper-venue-badge">Target: Elsevier Energy and Buildings</span>
@@ -323,89 +513,6 @@
   title={Multi-Seasonal Assessment of Nanostructured Cool Paints for Passive Radiative Cooling in Tropical Climates Using IoT Sensor Networks},
   author={Siam, Md. Abdus Shakur and Hossain, Md. Fahim and Imtiaz, Ahmed and Mahmud, A. S. M. Obaidullah and Talukder, Muhammad Anisuzzaman},
   journal={Elsevier Energy and Buildings (Manuscript Complete)},
-  year={2026}
-}</pre>
-      </article>
-
-      <!-- ================= PAPER 4 ================= -->
-      <article class="paper-entry" id="paper-eyediseasenet">
-        <div class="paper-meta-header">
-          <span class="paper-venue-badge">Submitted Manuscript</span>
-          <span class="paper-status-pill">Under Review</span>
-        </div>
-
-        <h2 class="paper-title">
-          EyeDiseaseNet: An Explainable and Resource-Efficient Self-Attention Hybrid Network for Multi-Class Ocular Disease Classification
-        </h2>
-
-        <div class="paper-authors">
-          Shamik Dey, Adnan Quaium, Saiful Islam, <span class="author-self">Md. Abdus Shakur Siam</span>
-        </div>
-
-        <!-- Metric Strip -->
-        <div class="metrics-strip">
-          <div class="metric-box">
-            <span class="metric-val">99.13%</span>
-            <span class="metric-label">Overall Classification Accuracy</span>
-          </div>
-          <div class="metric-box">
-            <span class="metric-val">0.9889</span>
-            <span class="metric-label">Cohen's Kappa (Diagnostic Agreement)</span>
-          </div>
-          <div class="metric-box">
-            <span class="metric-val">5 Classes</span>
-            <span class="metric-label">Cataract, Uveitis, Conjunctivitis, Eyelid, Normal</span>
-          </div>
-          <div class="metric-box">
-            <span class="metric-val">VGG19 + MobileNet</span>
-            <span class="metric-label">Self-Attention Hybrid + Grad-CAM XAI</span>
-          </div>
-        </div>
-
-        <ul class="contributions-list">
-          <li>
-            <span class="badge-tag">[O1]</span>
-            <strong>Hybrid Feature-Fusion Backbone:</strong> Fuses VGG19 and MobileNetV2 representations augmented with a lightweight self-attention mechanism, isolating fine pathological patterns with minimal computational overhead.
-          </li>
-          <li>
-            <span class="badge-tag">[O2]</span>
-            <strong>Robust Preprocessing Pipeline:</strong> Integrates Contrast Limited Adaptive Histogram Equalization (CLAHE) and Non-Local Means Denoising to eliminate noise and correct illumination artifacts without blurring vital tissue boundaries.
-          </li>
-          <li>
-            <span class="badge-tag">[O3]</span>
-            <strong>Multi-Class Clinical Evaluation:</strong> Evaluated on 6,894 anterior segment eye images across five diagnostic categories, demonstrating 99.13% overall accuracy and markedly outperforming standalone baselines.
-          </li>
-          <li>
-            <span class="badge-tag">[O4]</span>
-            <strong>Visual Explainability via Grad-CAM:</strong> Integrated Gradient-weighted Class Activation Mapping to generate spatial attention heatmaps, providing transparent diagnostic validation for clinicians.
-          </li>
-        </ul>
-
-        <!-- Visual / Schematic Section -->
-        <div style="margin: 1.25rem 0;">
-          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color);">
-            <img src="assets/img/eyediseasenet-workflow.png" alt="EyeDiseaseNet Multi-Stream Preprocessing, Hybrid Architecture, and Grad-CAM Workflow" class="figure-img">
-          </div>
-        </div>
-
-        <details class="paper-abstract">
-          <summary>Read Full Abstract</summary>
-          <div class="abstract-content">
-            Ocular diseases including cataracts, uveitis, conjunctivitis, and eyelid disorders, are primary causes of global visual impairment. Early identification is essential to prevent permanent vision loss, yet resource-constrained areas frequently lack accessible ophthalmic screening tools. Although deep learning architectures show promise in automated diagnostics, existing systems often struggle to distinguish visually similar conditions, demand excessive computational resources, and operate as uninterpretable black boxes. To address these limitations, we present EyeDiseaseNet, a multi-stream hybrid deep learning architecture designed for multi-class ocular disease classification. Our framework implements a robust image preprocessing pipeline combining Contrast Limited Adaptive Histogram Equalization (CLAHE) and Non-Local Means Denoising to eliminate noise and correct illumination artifacts. The model combines global and local structural features by fusing VGG19 and MobileNetV2 representations, which are further augmented with a lightweight self-attention mechanism to isolate fine pathological patterns. Furthermore, we integrate Gradient-weighted Class Activation Mapping (Grad-CAM) to generate spatial attention heatmaps, providing visual explanations for each diagnosis. Experimentally evaluated on a balanced multi-class dataset of 6,894 anterior segment eye images, EyeDiseaseNet achieved an overall classification accuracy of 99.13% and a Cohen’s Kappa score of 0.9889, markedly outperforming standalone baseline models. These results demonstrate that EyeDiseaseNet provides an accurate, explainable, and resource-efficient solution highly suitable for real-world clinical decision support systems.
-          </div>
-        </details>
-
-        <div class="paper-actions">
-          <button class="btn-action open-bibtex-btn" data-bibtex-target="bibtex-paper-4">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-            BibTeX
-          </button>
-        </div>
-
-        <pre id="bibtex-paper-4" style="display:none;">@article{dey2026eyediseasenet,
-  title={EyeDiseaseNet: An Explainable and Resource-Efficient Self-Attention Hybrid Network for Multi-Class Ocular Disease Classification},
-  author={Dey, Shamik and Quaium, Adnan and Islam, Saiful and Siam, Md. Abdus Shakur},
-  journal={Under Review},
   year={2026}
 }</pre>
       </article>

@@ -170,6 +170,34 @@
           <!-- Highlight 1 -->
           <div class="highlight-card">
             <span class="highlight-num">01</span>
+            <h3>TinyML Federated Learning: Computation vs. Wi-Fi Energy Crossover</h3>
+            <ul>
+              <li>First physically instrumented energy crossover measurement for on-device TinyML FL over 2.4 GHz Wi-Fi on an ESP32-S3 MCU.</li>
+              <li>Quantified on-device training (1.00 mJ/epoch) vs. Wi-Fi transfer (9.7 mJ/turn), proving empirical crossover at E* &approx; 9.7 epochs.</li>
+              <li>Uncovered that classical Shannon and switching models underestimate real microcontroller dissipation by 95%–99%.</li>
+            </ul>
+            <div style="margin-top: 1rem;">
+              <a href="research.html#paper-tinyml-fl-energy" class="project-link">Explore Crossover Study &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="highlight-card">
+            <span class="highlight-num">02</span>
+            <h3>Quantization as a Deployability Gate for Keyword Spotting on Cortex-M4</h3>
+            <ul>
+              <li>4-way PTQ benchmark (FP32, float16, DR-INT8, Full-INT8) on STM32 Nucleo-F446RE (180 MHz, 128 KiB SRAM).</li>
+              <li>Revealed PTQ acts as a binary deployability gate: 3 of 4 schemes fail SRAM budget or toolchain support; only Full-INT8 deploys.</li>
+              <li>Reached 92.25% accuracy (+0.07% vs FP32 reference), 62.26 KiB flash, 69.53 KiB RAM, and 4.39 mJ measured energy.</li>
+            </ul>
+            <div style="margin-top: 1rem;">
+              <a href="research.html#paper-kws-cortexm4-quantization" class="project-link">View Quantization Gate &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="highlight-card">
+            <span class="highlight-num">03</span>
             <h3>Custom Synchronous Buck Hardware for Edge Battery Health Prognostics</h3>
             <ul>
               <li>Unified a 600 kHz BQ24610 synchronous buck CC/CV charging circuit with an ESP32-S3 host.</li>
@@ -177,13 +205,13 @@
               <li>Validated on real 18650 NMC/LCO cells under live active charging with 1.80% MAE.</li>
             </ul>
             <div style="margin-top: 1rem;">
-              <a href="projects/edge-sbc.html" class="project-link">Explore Edge-SBC Platform →</a>
+              <a href="projects/edge-sbc.html" class="project-link">Explore Edge-SBC Platform &rarr;</a>
             </div>
           </div>
 
-          <!-- Highlight 2 -->
+          <!-- Highlight 4 -->
           <div class="highlight-card">
-            <span class="highlight-num">02</span>
+            <span class="highlight-num">04</span>
             <h3>First Systematic 4D Taxonomy of Security &amp; Privacy in AI-IoT (168 Studies)</h3>
             <ul>
               <li>Surveyed the 2019–2026 AI-IoT landscape across System Layer, AI Lifecycle, Threat Vectors, and AI Paradigms.</li>
@@ -191,21 +219,7 @@
               <li>Quantified post-quantum migration fragmentation penalties (10–28 fragments on 127-byte MTU) on low-MTU stacks.</li>
             </ul>
             <div style="margin-top: 1rem;">
-              <a href="research.html" class="project-link">Read Survey Details →</a>
-            </div>
-          </div>
-
-          <!-- Highlight 3 -->
-          <div class="highlight-card">
-            <span class="highlight-num">03</span>
-            <h3>Multi-Seasonal IoT Microclimate Assessment for Nanostructured Cool Paints</h3>
-            <ul>
-              <li>7-month continuous IoT sensor network deployment across sealed pilot testbeds on the BUET ECE rooftop.</li>
-              <li>Demonstrated a 4.15 °C (10.74%) interior temperature reduction and ~5 °C NOAA Heat Index suppression under peak pre-monsoon heat.</li>
-              <li>Projected 164.3 kWh net cooling energy savings and 112 kg CO<sub>2</sub> abatement for residential structures.</li>
-            </ul>
-            <div style="margin-top: 1rem;">
-              <a href="projects/cool-paint-iot.html" class="project-link">View Cool Paint System →</a>
+              <a href="research.html#paper-aiot-survey" class="project-link">Read Survey Details &rarr;</a>
             </div>
           </div>
         </div>
@@ -215,6 +229,18 @@
       <section>
         <h2>Recent News &amp; Updates</h2>
         <ul class="news-feed">
+          <li class="news-item">
+            <span class="news-date">[October 2026]</span>
+            <div class="news-content">
+              Paper titled <em>"Energy Allocation Between Computation and Wi-Fi Transmission in TinyML Federated Learning: A Measured Crossover"</em> submitted to <strong>IEEE Transactions on Machine Learning in Communications and Networking</strong>.
+            </div>
+          </li>
+          <li class="news-item">
+            <span class="news-date">[October 2026]</span>
+            <div class="news-content">
+              Paper titled <em>"Quantization as a Deployability Gate for Keyword Spotting on a Cortex-M4 MCU"</em> submitted to <strong>13th International Conference on Networking, Systems and Security (NSysS 2026)</strong>.
+            </div>
+          </li>
           <li class="news-item">
             <span class="news-date">[September 2026]</span>
             <div class="news-content">
