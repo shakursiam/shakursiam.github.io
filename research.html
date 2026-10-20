@@ -137,15 +137,24 @@
         </ul>
 
         <!-- Visual / Schematic Section -->
-        <div style="margin: 1.25rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff; padding: 0.5rem;">
-            <img src="assets/img/tinyml-fl-powertrace.png" alt="ESP32-S3 TinyML Federated Learning 1 kHz Power Trace and GPIO Markers" class="figure-img" style="object-fit: contain; width: 100%;">
-            <span style="display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">Measured 1 kHz power trace of client turn (E=20): training burst, download, pause, and upload.</span>
-          </div>
-          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff; padding: 0.5rem;">
-            <img src="assets/img/tinyml-fl-crossover.png" alt="Measured Marginal Energy per Turn and Crossover Point" class="figure-img" style="object-fit: contain; width: 100%;">
-            <span style="display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">Marginal energy per client turn vs local epochs E establishing the crossover at E* &approx; 9.7.</span>
-          </div>
+        <div class="gallery-grid" style="margin: 1.25rem 0; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem;">
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: #ffffff; aspect-ratio: auto; height: 230px; padding: 0.5rem;">
+              <img src="assets/img/tinyml-fl-powertrace.png" alt="ESP32-S3 TinyML Federated Learning 1 kHz Power Trace and GPIO Markers" class="figure-img" style="object-fit: contain; max-height: 100%; width: 100%;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 1:</strong> Measured 1 kHz power trace of client turn (E = 20) showing training burst, download, pause, and upload.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: #ffffff; aspect-ratio: auto; height: 230px; padding: 0.5rem;">
+              <img src="assets/img/tinyml-fl-crossover.png" alt="Measured Marginal Energy per Turn and Crossover Point" class="figure-img" style="object-fit: contain; max-height: 100%; width: 100%;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 2:</strong> Marginal energy per client turn vs. local epochs E establishing the crossover at E* &approx; 9.7.
+            </figcaption>
+          </figure>
         </div>
 
         <details class="paper-abstract">
@@ -230,15 +239,24 @@
         </ul>
 
         <!-- Visual / Schematic Section -->
-        <div style="margin: 1.25rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff; padding: 0.5rem;">
-            <img src="assets/img/kws-quantization-pipeline.png" alt="Keyword Spotting Quantization and Deployability Gate Pipeline" class="figure-img" style="object-fit: contain; width: 100%;">
-            <span style="display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">Experimental pipeline: feature extraction, 4-way PTQ export, X-CUBE-AI static analysis gate, and validation.</span>
-          </div>
-          <div class="figure-img-wrapper" style="border-radius: 6px; border: 1px solid var(--border-color); background-color: #ffffff; padding: 0.5rem;">
-            <img src="assets/img/kws-quantization-sram-gate.png" alt="RAM required by each PTQ variant against 128 KiB SRAM budget" class="figure-img" style="object-fit: contain; width: 100%;">
-            <span style="display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem; text-align: center;">SRAM required by each PTQ variant vs 128 KiB MCU limit: only Full-INT8 survives the deployability gate.</span>
-          </div>
+        <div class="gallery-grid" style="margin: 1.25rem 0; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem;">
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: #ffffff; aspect-ratio: auto; height: 230px; padding: 0.5rem;">
+              <img src="assets/img/kws-quantization-pipeline.png" alt="Keyword Spotting Quantization and Deployability Gate Pipeline" class="figure-img" style="object-fit: contain; max-height: 100%; width: 100%;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 1:</strong> Experimental pipeline: feature extraction, 4-way PTQ export, X-CUBE-AI static analysis gate, and validation.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: #ffffff; aspect-ratio: auto; height: 230px; padding: 0.5rem;">
+              <img src="assets/img/kws-quantization-sram-gate.png" alt="RAM required by each PTQ variant against 128 KiB SRAM budget" class="figure-img" style="object-fit: contain; max-height: 100%; width: 100%;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 2:</strong> SRAM required by each PTQ variant vs. 128 KiB MCU limit: only Full-INT8 survives the deployability gate.
+            </figcaption>
+          </figure>
         </div>
 
         <details class="paper-abstract">
