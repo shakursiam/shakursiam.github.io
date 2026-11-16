@@ -155,6 +155,21 @@
         </div>
       </section>
 
+      <!-- Engineering Case Study -->
+      <section>
+        <h2>Engineering Case Study: High-Speed Pixel Stream Buffering &amp; DMA Offloading</h2>
+        <p>
+          Capturing uncompressed, high-bandwidth optical data from the NOIP1SN1300A global-shutter sensor at high frame rates poses a severe processing bottleneck. Streaming raw pixel frames directly through standard processor loops would saturate CPU bus cycles, leading to frame drops, timing jitter, and buffer overflows.
+        </p>
+        <p>
+          To ensure sustained real-time capture without CPU throttling, the pipeline was architected around autonomous hardware offloading:
+        </p>
+        <ul style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+          <li><strong>High-Speed 10-Bit DCMI Parallel Bus:</strong> Interfaces with pixel clock (PCLK), horizontal reference (HREF), and frame synchronization (VSYNC) signals operating across tens of megahertz.</li>
+          <li><strong>Autonomous DMA Double-Buffering:</strong> Direct Memory Access (DMA2D) streams raw incoming pixel streams straight into external high-speed SDRAM frames without CPU intervention, freeing the 480 MHz ARM Cortex-M7 core to handle real-time JPEG hardware encoding and SDMMC file writing.</li>
+        </ul>
+      </section>
+
       <section>
         <h2>Hardware Prototyping Gallery</h2>
         <div class="gallery-grid">

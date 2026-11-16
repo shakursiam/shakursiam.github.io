@@ -161,6 +161,22 @@
         </div>
       </section>
 
+      <!-- Engineering Case Study -->
+      <section>
+        <h2>Engineering Case Study: Architecture Pivot &amp; Production Cost Optimization</h2>
+        <p>
+          During the initial design phase, the commercial client requested cellular LTE connectivity alongside GNSS for real-time asset tracking. However, implementing cellular LTE modems within the client's strict target budget (&le; $15/board) and rigid 21&times;21 mm dimensional footprint was technically and financially unviable due to high modem unit costs, SIM subscription overheads, and complex RF antenna layout requirements.
+        </p>
+        <p>
+          To overcome these barriers while fulfilling all operational specifications, Siam engineered an innovative architectural pivot:
+        </p>
+        <ul style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+          <li><strong>Dual-Protocol LoRa + BLE Ad-Hoc Mesh:</strong> Replaced expensive cellular modems with an ad-hoc, self-organizing peer-to-peer LoRa mesh paired with BLE 5.0. This eliminated recurring cellular data charges and slashed the bill of materials (BOM) cost to just $11&ndash;$12 per board&mdash;saving the client an estimated $15,000 to $20,000 across their 5,000-unit initial production run.</li>
+          <li><strong>Hybrid Indoor / Outdoor Localization:</strong> Outdoor localization is provided by a compact ATGM336H GNSS module. When tools are moved into indoor construction environments where satellite signals attenuate, the firmware automatically falls back to BLE beaconing for zone-based proximity detection via workers' mobile devices and site routers.</li>
+          <li><strong>Host Battery Power Harvesting &amp; Remote Kill-Switch:</strong> Taps directly into the host tool's 16V&ndash;24V battery pack, using an onboard switching step-down converter, TP4056 charger, and DW01A protection IC to trickle-charge an internal backup LiPo cell. A high-current P-Channel / low-side power MOSFET switch allows immediate remote deactivation of the tool's primary power rail whenever geofence violations occur.</li>
+        </ul>
+      </section>
+
       <section>
         <h2>Hardware &amp; Network Topology Gallery</h2>
         <div class="gallery-grid">

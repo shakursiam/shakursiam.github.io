@@ -158,6 +158,21 @@
         </div>
       </section>
 
+      <!-- Engineering Case Study -->
+      <section>
+        <h2>Engineering Case Study: Frequency Mismatch &amp; Resonant Stabilization</h2>
+        <p>
+          During the development of the companion Redrock G-Force wearable module, attempts to use off-the-shelf commercial Qi chargers revealed a critical engineering obstacle: inductive frequency mismatch. Commercial transmitters failed to reliably handshake and tune to the sub-10 mm ultra-compact receiver coil, causing dropped connections and thermal spikes.
+        </p>
+        <p>
+          To resolve this, Siam custom-designed this dedicated Qi transmitter from the ground up:
+        </p>
+        <ul style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+          <li><strong>Precise Resonant Frequency Hopping:</strong> Carefully calculated the LC tank resonant frequency window and programmed dynamic frequency hopping algorithms to maintain stable magnetic coupling with the miniature receiver coil.</li>
+          <li><strong>Transmitter Bulk Capacitor Bank:</strong> Implemented a high-performance custom bulk capacitor bank on the primary drive rail to suppress switching ripple, prevent voltage droop during ping bursts, and ensure rock-solid inductive power transfer.</li>
+        </ul>
+      </section>
+
       <section>
         <h2>Hardware &amp; PCB Layout Gallery</h2>
         <div class="gallery-grid">
@@ -168,6 +183,15 @@
             </div>
             <figcaption class="figure-caption">
               <strong>Figure 1:</strong> Circular PCB assembly featuring the center inductive transmitter coil, resonant capacitors, half-bridge MOSFET switches, and power path switching ICs.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper">
+              <img src="../assets/img/projects/redrock-and-charger.jpg" alt="Redrock Qi Transmitter alongside the Redrock G-Force Wearable Module" class="figure-img">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 2:</strong> Completed Qi wireless transmitter station placed side-by-side with the companion Redrock G-Force flexible wearable sensor unit.
             </figcaption>
           </figure>
 

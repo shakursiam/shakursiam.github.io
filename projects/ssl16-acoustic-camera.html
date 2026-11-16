@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSL-16: 16-Channel MEMS Acoustic Camera &amp; Sound Source Localization | Md. Abdus Shakur Siam</title>
+  
+  <meta name="author" content="Md. Abdus Shakur Siam">
+  <meta name="description" content="SSL-16: 16-channel MEMS acoustic camera for real-time sound source localization and beamforming in dense urban traffic. Engineered with ESP32-S3, 4x TI TLV320ADC5140 TDM daisy-chain, and 16 Infineon IM73A135 microphones in a Vogel spiral array.">
+  <meta name="keywords" content="Acoustic Camera, Sound Source Localization, Beamforming, MEMS Microphones, ESP32-S3, TLV320ADC5140, TDM Daisy Chain, LMK1C1104, Vogel Sunflower Spiral, KiCad">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    (function() {
+      var saved = localStorage.getItem('shakursiam_theme_preference');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="navbar-brand" title="Homepage">
+        <span class="initials">SIAM</span>
+        <span>Md. Abdus Shakur Siam</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">About</a></li>
+          <li><a href="../research.html" class="nav-link">Research</a></li>
+          <li><a href="../projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="../activities.html" class="nav-link">Activities</a></li>
+          <li><a href="../cv.html" class="nav-link">CV</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle light and dark theme">
+          <svg class="icon-sun" style="display:none;" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"></line>
+            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"></line>
+            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"></line>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="mobile-nav-toggle" aria-label="Open mobile menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      
+      <nav class="breadcrumb-nav">
+        <a href="../projects.html">&larr; Back to Projects Hub</a> / <span>SSL-16 Acoustic Camera</span>
+      </nav>
+
+      <header class="case-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+          <span class="status-badge prototype">Lab Prototype (Rev A)</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-muted);">Independent Embedded R&amp;D</span>
+          <a href="https://github.com/shakursiam/ssl16-acoustic-camera" target="_blank" rel="noopener noreferrer" class="btn-action" style="padding: 0.25rem 0.65rem; font-size: 0.8rem; margin-left: auto;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub Repository
+          </a>
+        </div>
+        <h1 style="margin-bottom: 0.5rem;">SSL-16: 16-Channel MEMS Acoustic Camera</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          Integrated 16-Channel Acoustic Camera &amp; Sound Source Localization Platform Engineered with 4&times; TLV320ADC5140 TDM Daisy-Chain, Vogel Sunflower Array, and ESP32-S3 Compute Engine.
+        </p>
+
+        <div class="tech-pills-row">
+          <span class="tech-pill">ESP32-S3 (8MB Flash / 8MB PSRAM)</span>
+          <span class="tech-pill">16&times; Infineon IM73A135 Mics</span>
+          <span class="tech-pill">4&times; TI TLV320ADC5140 ADCs</span>
+          <span class="tech-pill">16-Channel TDM Daisy-Chain</span>
+          <span class="tech-pill">TI LMK1C1104 Buffer (&lt;30ps Skew)</span>
+          <span class="tech-pill">24.576 MHz Master Clock</span>
+          <span class="tech-pill">Vogel Sunflower Spiral (D=160mm)</span>
+          <span class="tech-pill">4-Bit Native SDMMC</span>
+          <span class="tech-pill">4-Layer JLCPCB Stack-up</span>
+          <span class="tech-pill">KiCad 10</span>
+        </div>
+
+        <div class="case-meta-grid">
+          <div class="case-meta-item">
+            <span class="label">Role</span>
+            <div class="val">Hardware &amp; Embedded Systems Designer</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Compute &amp; DSP</span>
+            <div class="val">Espressif ESP32-S3 (Dual Xtensa LX7 @ 240 MHz)</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Acoustic Aperture</span>
+            <div class="val">16-Channel Vogel Spiral ($R = 80\,\text{mm}$, $D = 160\,\text{mm}$)</div>
+          </div>
+          <div class="case-meta-item">
+            <span class="label">Audio Sampling</span>
+            <div class="val">16 Slots &times; 16-bit @ 48 kHz ($\text{BCLK} = 12.288\,\text{MHz}$)</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- System Architecture & Technical Specifications -->
+      <section>
+        <h2>System Architecture &amp; Hardware Specifications</h2>
+        <p>
+          The <strong>SSL-16</strong> is an integrated 16-channel acoustic camera system engineered for real-time sound source localization (SSL) and acoustic beamforming, designed for downward-looking deployment over traffic intersections to localize illegal vehicle honking and characterize acoustic pollution in dense urban environments (such as Dhaka, Bangladesh).
+        </p>
+        <p>
+          The hardware integrates 16 Infineon IM73A135 differential analog MEMS microphones arranged in a non-uniform Vogel (sunflower) spiral layout across an 80 mm radius aperture ($D = 160\,\text{mm}$), eliminating spatial aliasing up to 6.0 kHz. The analog signals are digitized synchronously by four Texas Instruments TLV320ADC5140 4-channel ADCs over a shared 16-channel TDM daisy-chain bus into an Espressif ESP32-S3-WROOM-1-N8R8 microcontroller.
+        </p>
+
+        <div class="specs-table-wrapper">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Subsystem</th>
+                <th>Engineering Specification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Microphone Array &amp; Geometry</td>
+                <td>16&times; Infineon <code>IM73A135V01XTSA1</code> differential analog, bottom-port MEMS microphones with 73 dB(A) SNR and 135 dB SPL acoustic overload point (AOP). Array follows a Vogel (sunflower) spiral ($R = 80\,\text{mm}$ aperture) with acoustic sound entry via 0.8 mm non-plated through-holes (NPTH), eliminating spatial aliasing and grating lobes from 1.5 kHz to 6.0 kHz.</td>
+              </tr>
+              <tr>
+                <td>Digitization Front-End</td>
+                <td>4&times; Texas Instruments <code>TLV320ADC5140</code> quad-channel audio ADCs with differential analog inputs and programmable channel gain, packaged in QFN-24 with 9 thermal vias per exposed pad.</td>
+              </tr>
+              <tr>
+                <td>TDM Audio Bus &amp; Daisy-Chain</td>
+                <td>16-channel Time Division Multiplexed (TDM) audio frame: 16 slots &times; 16 bits per sample @ $f_s = 48\,\text{kHz}$, yielding $\text{BCLK} = 12.288\,\text{MHz}$ (256 BCLK cycles per frame). ADC-4 acts as the sole TDM Controller, cascading serialized data through ADC-3, ADC-2, ADC-1 into the ESP32-S3 I2S/TDM peripheral.</td>
+              </tr>
+              <tr>
+                <td>Master Clock &amp; Low-Skew Fan-Out Tree</td>
+                <td>Abracon <code>ASE-24.576MHZ-LC-T</code> 24.576 MHz 3.3V CMOS crystal oscillator directly driving ADC-4 ($MCLK$). The generated 12.288 MHz bit-clock ($BCLK$) is buffered through a Texas Instruments <code>LMK1C1104</code> 1:4 LVCMOS clock buffer (&lt; 30 ps output skew) with 33 &Omega; series damping resistors to synchronously drive ADC-1..3 and the ESP32-S3 without clock degradation or phase jitter.</td>
+              </tr>
+              <tr>
+                <td>Compute Platform</td>
+                <td>Espressif <code>ESP32-S3-WROOM-1-N8R8</code> dual-core Xtensa LX7 @ 240 MHz, with 8 MB embedded Flash, 8 MB Octal PSRAM for circular audio frame buffering, native USB-Serial/JTAG CDC, and 2.4 GHz Wi-Fi / BLE 5.0 telemetry.</td>
+              </tr>
+              <tr>
+                <td>Onboard Mass Storage</td>
+                <td>Molex 104031-0811 microSD push-push socket routed over a dedicated native 4-bit <code>SDMMC</code> bus (IO4, IO5, IO15, IO16, IO18, IO21) for continuous raw multi-channel audio acquisition and beamforming event logging.</td>
+              </tr>
+              <tr>
+                <td>Power Architecture</td>
+                <td>Dual-input power supply: 12V DC barrel jack or 5V USB-C with automatic ideal-diode OR-ing (P-MOSFET $Q_1$ + Schottky $D_1$) into <code>VSYS</code>. Stepped down via XL2596S-5.0 (5V buck), AP2112K-3.3 (3.3V digital), and a Texas Instruments <code>TPS7A2033</code> ultra-low-noise LDO (3.3V analog) over a unified continuous ground plane.</td>
+              </tr>
+              <tr>
+                <td>PCB Physical Stack-up</td>
+                <td>230 mm &times; 170 mm, 4 layers, 1.6 mm nominal thickness (JLCPCB JLC04161H-7628 stack-up). All 193 SMD components, differential signal traces, and regulators reside on the bottom layer with a solid ground shield flood, leaving the top layer as a smooth, acoustic faceplate with 16 acoustic entry ports.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Engineering Case Study & Hardware Evolution -->
+      <section>
+        <h2>Engineering Case Study &amp; Design Evolution</h2>
+        <p>
+          Localizing vehicle honking in dense metropolitan traffic requires high angular precision and reliable time-difference-of-arrival (TDOA) / steerable beamforming algorithms. Building this custom multi-microphone platform required solving several critical signal integrity and spatial geometry challenges across three iterative design phases:
+        </p>
+
+        <div class="specs-table-wrapper" style="margin-top: 1.5rem;">
+          <table class="specs-table">
+            <thead>
+              <tr>
+                <th>Design Phase</th>
+                <th>Hardware Architecture &amp; Challenge</th>
+                <th>Engineering Resolution &amp; Lessons Learned</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Phase 1: 4-Mic Lab Prototype</strong></td>
+                <td>Built with 4&times; off-the-shelf INMP441 I2S digital microphones. When implementing the Chan-Ho TDOA algorithm, the system suffered from severe front-back spatial ambiguity. In 2D planar acoustic space, the Chan-Ho TDOA formulation strictly requires at least 5 non-collinear sensor nodes to uniquely resolve hyperboloid intersection ambiguities.</td>
+                <td>Identified theoretical limitations of low-element planar arrays; established the need for a higher channel count array with non-uniform radial geometry to resolve spatial ambiguities.</td>
+              </tr>
+              <tr>
+                <td><strong>Phase 2: Distributed Dual MCU 6-Mic Rig</strong></td>
+                <td>Expanded to 6 microphones across dual ESP32-S3 microcontrollers with a maximum array diameter of 0.67 meters. However, distributing unbuffered high-frequency clock signals (BCLK/WS) over long interconnect wires introduced severe capacitive loading, signal reflections, and clock phase jitter. The timing corruption destroyed TDOA calculations, because in spatial localization, even picosecond/nanosecond timing jitter translates directly into physical distance calculation errors.</td>
+                <td>Proved that distributed, long-wire I2S clocking is fundamentally unsuited for multi-channel acoustic arrays. Validated the necessity of a single monolithic PCB with an active, buffered clock tree and shared master oscillator.</td>
+              </tr>
+              <tr>
+                <td><strong>Phase 3: Unified SSL-16 Monolithic Board</strong></td>
+                <td>Engineered the custom 4-layer SSL-16 PCB. To guarantee absolute phase synchronization across all 16 channels, incorporated a dedicated Abracon 24.576 MHz crystal oscillator directly feeding ADC-4 as the TDM Controller. Routed the resulting 12.288 MHz BCLK through a Texas Instruments <code>LMK1C1104</code> 1:4 LVCMOS clock buffer (&lt;30 ps output skew) with 33 &Omega; series damping resistors to synchronously drive ADC-1, ADC-2, ADC-3, and the ESP32-S3.</td>
+                <td>Achieved sub-nanosecond clock alignment across all 4 ADCs. Microphones route over differential pairs to eliminate common-mode digital switching noise, and the Vogel spiral aperture eliminates grating lobes up to 6.0 kHz.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Visual Gallery -->
+      <section>
+        <h2>Hardware Prototyping &amp; 3D Modeling Gallery</h2>
+        <div class="gallery-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: var(--bg-card); aspect-ratio: 4/3;">
+              <img src="../assets/img/projects/ssl16-board-closeup.jpg" alt="SSL-16 Fabricated PCB populated on workbench with ESP32-S3, ADCs, and power tree" class="figure-img" style="object-fit: cover; width: 100%; height: 100%;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 1:</strong> Populated SSL-16 Rev A prototype on the electronics workbench, showing the ESP32-S3-WROOM-1 module, TLV320ADC5140 ADCs, clock buffer, and power supply circuitry.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: var(--bg-card); aspect-ratio: 4/3;">
+              <img src="../assets/img/projects/ssl16-cad-bottom.jpg" alt="KiCad 3D Render of SSL-16 bottom surface showing SMD routing and differential traces" class="figure-img" style="object-fit: contain; width: 100%; height: 100%;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 2:</strong> KiCad 10 3D CAD render of the bottom routing layer: all 193 SMD components, differential microphone pairs, clock distribution network, and continuous ground shield flood.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: var(--bg-card); aspect-ratio: 4/3;">
+              <img src="../assets/img/projects/ssl16-cad-top.jpg" alt="KiCad 3D Render of SSL-16 top faceplate showing 16 Vogel sunflower sound ports" class="figure-img" style="object-fit: contain; width: 100%; height: 100%;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 3:</strong> KiCad 10 3D CAD render of the top acoustic faceplate, showing the 16 non-uniform Vogel (sunflower) spiral sound entry ports (0.8 mm NPTH holes) across an 80 mm radius aperture.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper" style="background-color: var(--bg-card); aspect-ratio: 4/3;">
+              <img src="../assets/img/projects/ssl16-board-assembled.jpg" alt="Fabricated SSL-16 multi-layer circuit board" class="figure-img" style="object-fit: contain; width: 100%; height: 100%;">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 4:</strong> Fabricated 230 mm &times; 170 mm 4-layer SSL-16 circuit board delivered from the PCB foundry prior to final acoustic calibration bench testing.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <section style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <a href="../projects.html" class="btn-action">&larr; Back to All Projects</a>
+        <a href="https://github.com/shakursiam/ssl16-acoustic-camera" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View Full KiCad Project on GitHub &rarr;
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        &copy; 2026 Md. Abdus Shakur Siam
+      </div>
+      <div class="footer-socials">
+        <a href="https://orcid.org/0000-0003-4628-1832" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="ORCID">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.434h2.238c2.644 0 3.787-1.744 3.787-3.712 0-2.156-1.372-3.722-3.722-3.722h-2.303z"/></svg>
+        </a>
+        <a href="https://github.com/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shakursiam" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:shakursiam@gmail.com" class="footer-social-link" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

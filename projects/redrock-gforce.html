@@ -164,6 +164,19 @@
         </div>
       </section>
 
+      <!-- Engineering Challenges & Case Study -->
+      <section>
+        <h2>Engineering Case Study &amp; Hardware Troubleshooting</h2>
+        <p>
+          Powering active G-force acceleration tracking on a miniature 24 mAh battery within a 21&times;10 mm flexible footprint presented stringent thermal, spatial, and power challenges:
+        </p>
+        <ul style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+          <li><strong>Aggressive Micro-Power Firmware Gating:</strong> The STM32L0 MCU is maintained in deep STOP mode with a quiescent draw of only ~12 &micro;A. The ADXL362 micropower accelerometer monitors ambient motion continuously; upon detecting an acceleration threshold event, it fires an asynchronous hardware interrupt to awaken the MCU. High-intensity alert LEDs are modulated at a 50% PWM duty cycle, slashing active power consumption while maintaining clear visual alerts.</li>
+          <li><strong>High-Density FlexPCB Layout:</strong> Designed under tight polyimide flexible circuit tolerances, routing micro-BGA components and integrating an inductive Qi receiver circuit restricted to less than 10 mm total width to meet strict spatial and budget requirements.</li>
+          <li><strong>Qi Charging Frequency Mismatch &amp; Transmitter Redesign:</strong> Initial prototypes attempted to charge from off-the-shelf commercial wireless chargers; however, severe inductive frequency mismatch caused erratic power transfer and charging cutoffs. To overcome this, Siam engineered a fully compliant, dedicated Qi transmitter base station from scratch&mdash;calculating precise resonant frequency hopping and integrating a custom bulk capacitor bank on the transmitter side to achieve ripple-free, stable wireless power transfer.</li>
+        </ul>
+      </section>
+
       <!-- Visual Gallery -->
       <section>
         <h2>Hardware Prototyping &amp; 3D Modeling Gallery</h2>
@@ -184,6 +197,15 @@
             </div>
             <figcaption class="figure-caption">
               <strong>Figure 2:</strong> High-density polyimide flex PCB ribbon layout showing curved trace routing and ground shielding for wireless Qi power isolation.
+            </figcaption>
+          </figure>
+
+          <figure class="figure-card">
+            <div class="figure-img-wrapper">
+              <img src="../assets/img/projects/redrock-and-charger.jpg" alt="Redrock G-Force Flexible Wearable Sensor module placed next to its companion custom Qi Wireless Charger" class="figure-img">
+            </div>
+            <figcaption class="figure-caption">
+              <strong>Figure 3:</strong> Redrock G-Force flexible wearable sensor module positioned alongside the custom-engineered companion Qi wireless charging transmitter pad.
             </figcaption>
           </figure>
 
